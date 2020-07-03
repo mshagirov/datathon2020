@@ -1,0 +1,9 @@
+# ignore checkpoints
+.ipynb_checkpoints
+
+# python
+__pycache__/
+
+# mac os
+.DS_Store
+
