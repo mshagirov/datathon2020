@@ -13,6 +13,23 @@ def mae(x1,x2):
     '''Compute Mean Absolute Error (MAE loss) between numpy arrays x1 and x2'''
     return np.mean( np.absolute(x2-x1) )
 
+
+def lagged_xcorr(x1,x2):
+    '''"Lagged correlation",
+    
+    ouput:
+    - lags, xcorr : lag times, and corresponding xcorr values
+    
+    xcorr val-s are devided by x1.shape[0] (produces average), and np.std(x1)*np.std(x2) (scale to normalize xcorr)
+    '''
+    assert x1.shape[0]==x2.shape[0]
+    xcorr_scale = np.std(x1)*np.std(x2)
+    # "full" xcorr will be "2 * x1.shape[0] -1", middle is lag==0
+    xcorr = np.correlate(x1,x2,mode='full') /xcorr_scale /x1.shape[0]
+    
+    lags = np.concatenate(( np.arange(-(x1.shape[0]-1),1), np.arange(1,x1.shape[0]) ) )
+    return lags, xcorr
+
 # persistence
 def persistence_loss(x,start_time=0,lead_time=5,metric='mse'):
     '''Compute loss for persistence with `T+lead_time`, i.e. RMSE(Y(T+0),Y(T+lead_time))
