@@ -3,6 +3,11 @@ import numpy as np
 def windowed_data(x_norm, lead_time=5, window_size=6):
     '''Prepare windowed data with a given window size
     - columns:`[Y(T+lead_time), Y(T+0), ...,Y(T-window_size+1)]`
+
+    Arg-s:
+    - x_norm : input data
+    - lead_time : lead time, Y(T+lead_time) that you are trying to predict.
+    - window_size : numbe of past inputs, [Y(T+lead_time), Y(T+0), ...,Y(T-window_size+1)].
     '''
     start_time = window_size-1
     X = [x_norm[start_time+lead_time:].reshape(-1,1) ] # Y(T+lead_time)
@@ -11,7 +16,6 @@ def windowed_data(x_norm, lead_time=5, window_size=6):
         X.append(x_norm[w-1:x_norm.shape[0] - lead_time - window_size+w].reshape(-1,1))
     # concatenate Y(T+lead_time), Y(T+0),...,Y(T-window_size+1)
     return np.concatenate(X,axis=1)
-
 
 def windowed_diff_data(x_norm, lead_time=5, window_size=6):
     '''Prepare windowed data with a given window size

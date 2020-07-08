@@ -35,7 +35,7 @@ def persistence_loss(x,start_time=0,lead_time=5,metric='mse'):
     '''Compute loss for persistence with `T+lead_time`, i.e. RMSE(Y(T+0),Y(T+lead_time))
 
     - metric: one of ['mse','rmse', 'mae', 'euclidean', 'none'],
-    when 'none' returns Y(T+0) and Y(T+lead_time) values.
+    when 'none' returns Y(T+0) and Y(T+lead_time) values. The "euclidean" metric is 0.5*MSE.
 
     - start_time = window_size - 1 , is the index of first Y(T+0)
     - must satisfy: "x.shape[0]-lead_time">start_time>=0
