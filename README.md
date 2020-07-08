@@ -22,3 +22,5 @@ Suggested way to use and edit `./src/*.py` files and notebook templates in `./nb
         - Raw dataset (has missing values for some hours): `./lab2/data/PJM_Load_hourly.csv`
         - Raw dataset stats: `./lab2/data_stats.csv`
         - Test and training datasets (not normalized data): `./lab2/data/test.csv` and `./lab2/data/train.csv`
+    - _NN102_ (week 2)
+      - `./NN102/sg_temps` containes raw (`sg_temps_raw.csv`) and normalised (`sg_temps.csv`), data was normalised by shifting it by mean $\mu\approx28.0$ and scaling it by the S.D. $\sigma\approx0.8$. $$x_{norm}=\frac{x_{raw}-\mu}{\sigma}$$.
