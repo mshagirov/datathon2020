@@ -1,7 +1,17 @@
 # Datathon 2020 files
 ---
 
-- `./src` python source code (2nd part of datathon)
+Suuggested way to use and edit `./src/*.py` files and notebook templates in `./nbs`:
+- Copy notebook templates to a new folder, then create symbolic link e.g.:
+    - `ln -s '../datathon2020/src/' .`
+- Once you created the link, in your notebooks you can import all the modules in `./src` with `from src.[MODULE_NAME] import [SOMETHING]` e.g.:
+    - ```python
+    from src.datautils import windowed_data 
+    ```
+- If you develope a new and useful routine (e.g. implement prediction notebook, or add model saving, early stopping) edit the template notebook in this repository. Don't forget to share with others tell about the new routines that you add.
+
+---
+- `./src` python source code (2nd part of datathon).
 - `./nbs` notebook templates for normalising, preprocessing, training and prediction steps.
 - `./lab1` and `./lab2` are self-contained codes and notebooks for labs 1 and 2 (1st part of the datathon)
 - Datasets:
