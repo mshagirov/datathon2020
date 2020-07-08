@@ -1,5 +1,7 @@
-# Datathon 2020 files
+# Oracle: Datathon 2020
 ---
+>Our team's files for "Deep Learning Datathon 2020", organised by ai4impact.
+> Team _Oracle_
 
 Suggested way to use and edit `./src/*.py` files and notebook templates in `./nbs`:
 - Copy notebook templates to a new folder, then create symbolic link e.g.:
