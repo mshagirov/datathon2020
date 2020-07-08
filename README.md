@@ -6,7 +6,7 @@ Suuggested way to use and edit `./src/*.py` files and notebook templates in `./n
     - `ln -s '../datathon2020/src/' .`
 - Once you created the link, in your notebooks you can import all the modules in `./src` with `from src.[MODULE_NAME] import [SOMETHING]` e.g.:
     - `from src.datautils import windowed_data`
-- If you develope a new and useful routine (e.g. implement prediction notebook, or add model saving, early stopping) edit the template notebook in this repository. Don't forget to share with others tell about the new routines that you add.
+- If you develop a new and useful routine (e.g. implement prediction notebook, or add model saving, early stopping) edit the template notebook in this repository. Don't forget to share with others tell about the new routines that you add.
 
 ---
 - `./src` python source code (2nd part of datathon).
@@ -20,6 +20,3 @@ Suuggested way to use and edit `./src/*.py` files and notebook templates in `./n
         - Raw dataset (has missing values for some hours): `./lab2/data/PJM_Load_hourly.csv`
         - Raw dataset stats: `./lab2/data_stats.csv`
         - Test and training datasets (not normalized data): `./lab2/data/test.csv` and `./lab2/data/train.csv`
-
-
-
