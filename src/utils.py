@@ -51,6 +51,6 @@ def persistence_loss(x,start_time=0,lead_time=5,metric='mse'):
     elif metric=='mae':
         return mae(Y0,Ylead)
     elif metric=='euclidean':
-        return 0.5*mae(Y0,Ylead)
+        return 0.5*mse(Y0,Ylead)
     else:
         return Y0,Ylead
