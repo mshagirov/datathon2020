@@ -1,7 +1,7 @@
 # Datathon 2020 files
 ---
 
-Suuggested way to use and edit `./src/*.py` files and notebook templates in `./nbs`:
+Suggested way to use and edit `./src/*.py` files and notebook templates in `./nbs`:
 - Copy notebook templates to a new folder, then create symbolic link e.g.:
     - `ln -s '../datathon2020/src/' .`
 - Once you created the link, in your notebooks you can import all the modules in `./src` with `from src.[MODULE_NAME] import [SOMETHING]` e.g.:
