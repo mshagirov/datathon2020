@@ -7,7 +7,8 @@ def windowed_data(x_norm, lead_time=5, window_size=6):
     Arg-s:
     - x_norm : input data
     - lead_time : lead time, Y(T+lead_time) that you are trying to predict.
-    - window_size : numbe of past inputs, [Y(T+lead_time), Y(T+0), ...,Y(T-window_size+1)].
+    - window_size : number of past inputs, [ Y(T+0), ...,Y(T-window_size+1)],
+    where Y(t) =  x_norm[t]
     '''
     start_time = window_size-1
     X = [x_norm[start_time+lead_time:].reshape(-1,1) ] # Y(T+lead_time)
