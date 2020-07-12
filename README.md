@@ -25,7 +25,16 @@ Suggested way to use and edit `./src/*.py` files and notebook templates in `./nb
         - Test and training datasets (not normalized data): `./lab2/data/test.csv` and `./lab2/data/train.csv`
     - _NN102_ (week 2)
       - `./NN102/sg_temps` containes raw (`sg_temps_raw.csv`) and normalised (`sg_temps.csv`), data was normalised by shifting it by mean $\mu\approx28.0$ and scaling it by the S.D. $\sigma\approx0.8$. $$x_{norm}=\frac{x_{raw}-\mu}{\sigma}$$.
-
-```python
-
-```
+    - _P003_ (dataset for the challenge)
+      - `./P003/datasets/` contains:
+        - Energy Generation Data for Ile-de-France, raw files from [RET](https://www.rte-france.com/) (real-time data will be updated when you re-download it in `./P003/introduction.ipynb`):
+          - Units for power are in `MW`
+          1. `eCO2mix_RTE_Ile-de-France_Annuel-Definitif_2017.xls`
+          1. `eCO2mix_RTE_Ile-de-France_Annuel-Definitif_2018.xls`
+          1. `eCO2mix_RTE_Ile-de-France_En-cours-Consolide_FIXED_ERRCOLS.xls` (this is clean version of `eCO2mix_RTE_Ile-de-France_En-cours-Consolide.xls` data after removing empty columns)
+          1. `eCO2mix_RTE_Ile-de-France_En-cours-TR.xls` (near real-time data, date and time are in Paris time)
+        - Wind Forecast Data (from [Terra Weather](http://www.terra-weather.com/)) from two weather models for major wind farm locations in Ile-de-France region:
+          1. `/model1/` contains latest forecasts for model 1.
+          1. `/model2/` latest forecasts for model 2.
+          1. `/historical1/` historical forecasts for model 1.
+          1. `/historical2/` historical forecasts for model 2.
