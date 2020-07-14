@@ -53,6 +53,36 @@ def windowed_diff_with_step(Y,lead_time=5, window_size=6, h=5):
     return np.concatenate(Xout,axis=1)
 
 
+def windowed_momentum_force(Y,lead_time=5, window_size=6, h=5):
+    '''For 1d array Y, computes higher-order differences between elements Y[i]-Y[i-h], where h is a step size.
+    Generally, h is chosen to be equal to the lead time: `h=lead_time`.
+
+    Arg-s:
+    - Y: input (1d array, e.g. time series data), this should be normalised e.g. x_norm.
+    - lead_time: lead time for Y(t+lead_time) you are predicting using data from Y(t+0) and before.
+    - window_size : window size, features are computed from a window with size "window_size".
+    This window includes [Y(t+0),...., Y(t-window_size+1)].
+    - h : step size for differences Y[i]-Y[i-h].
+
+    Returns an array with:
+    - len(Y) - (`window_size`+lead_time-1) rows, and
+    - First 2 columns: [ Y[t+lead_time],  Y[t+0] ]
+    - Next (`window_size`-h) col-s are differences dY[t] with step h:
+    [ Y[t+0]-Y[t-h], Y[t-1]-Y[(t-1)-h], ..., Y[(t-(window_size-1-h)]-Y[t-window_size+1]  ]
+    - Next (`window_size`-2*h) col-s are momentums ddY[t], differences of differences with step h:
+    [ dY[t+0] - dY[t-h], ..., dY[(t-(window_size-1-2h)] - dY[(t-(window_size-1-h)]]
+    - The last (`window_size`-3*h) col-s are forces==differences of momentums with step h:
+    [ ddY[t+0] - ddY[t-h], ..., ddY[(t-(window_size-1-3h)] - ddY[(t-(window_size-1-2h)]] or
+    [ (Y[t+0]-Y[t-h]) - 2*(Y[t-h]-Y[t-2h])+ ((Y[t-2h]-Y[t-3h])) ), ...]
+    '''
+    X = windowed_data(Y, lead_time=lead_time, window_size=window_size)
+    YleadY0 = X[:,:2] # [Ylead, Y0]
+    diffX = X[:,1:(window_size+1-h)]-X[:,1+h:] # [ Y[t+0]-Y[t-h],Y[t-1]-Y[t-h-1],... ]
+    momentumX = diffX[:,:diffX.shape[1]-h] - diffX[:,h:] # [ (Y[t+0]-Y[t-h]) - ((Y[t-h]-Y[t-2h]))]
+    forceX = momentumX[:,:momentumX.shape[1]-h] - momentumX[:,h:] # [ (Y[t+0]-Y[t-h]) - 2*(Y[t-h]-Y[t-2h])+ ((Y[t-2h]-Y[t-3h])) )]
+    return np.concatenate([YleadY0, diffX, momentumX, forceX], axis=1)
+
+
 def download_energy_latest(file_url_='https://ai4impact.org/P003/historical/energy-ile-de-france.csv',
 file_path='datasets/energy-ile-de-france.csv',return_filepath=False):
     '''
