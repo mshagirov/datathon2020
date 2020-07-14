@@ -31,6 +31,35 @@ def windowed_diff_data(x_norm, lead_time=5, window_size=6):
     return X
 
 
+def download_energy_latest(file_url_='https://ai4impact.org/P003/historical/energy-ile-de-france.csv',
+file_path='datasets/energy-ile-de-france.csv'):
+    '''
+    Download historical and the latest RTE energy readings from
+    `https://ai4impact.org/P003/historical/energy-ile-de-france.csv`.
+    Save all files to `./datasets/`, formatted to hourly kWh readings.
+
+    file_url_ : url to download from, default is the url above
+    file_path : file name and location for the downloaded file. 
+    '''
+    # Download latest wind forecasts
+    file_name,_ = urllib.request.urlretrieve(file_url_,filename=file_path)
+    assert file_name==file_path
+    print(f'Downloaded from:\n`{file_url_}`\nsaved to:\n{file_name}')
+
+def read_ai4impact_energy(file_path):
+    '''
+    Read energy (in kWh) readings from "energy-ile-de-france.csv".
+
+    You NEED TO update the leatest readings using `download_energy_latest()`,
+    and then use this function to read the downloaded `*.csv`.
+    '''
+    df = pd.read_csv(file_path,header=None,index_col=0)
+    df.index.rename('Datetime',inplace=True)
+    df.index=pd.to_datetime(df.index)
+    df.rename(columns={1:'Energy(kWh)'},inplace=True)
+    return df
+
+
 # wind farm locations
 locations = ['guitrancourt', 'lieusaint', 'lvs-pussay', 'parc-du-gatinais',
  'arville', 'boissy-la-riviere', 'angerville-1', 'angerville-2']
