@@ -20,7 +20,7 @@ def windowed_data(x_norm, lead_time=5, window_size=6):
     return np.concatenate(X,axis=1)
 
 def windowed_diff_data(x_norm, lead_time=5, window_size=6):
-    '''Prepare windowed data with a given window size
+    '''For 1d array Y, prepare windowed data with a given window size with differences
     - 1st and 2nd columns:`[Y(T+lead_time), Y(T+0),]
     - 3rd and subsequent columns are differences:
     `[, Y(T+0)-Y(T-1), Y(T-1)-Y(T-2),..., Y(T-window_size+2)-Y(T-window_size+1)]`
@@ -29,6 +29,28 @@ def windowed_diff_data(x_norm, lead_time=5, window_size=6):
     X[:,2:] = X[:,1:-1]-X[:,2:]
     # concatenate Y(T+lead_time), Y(T+0), differences
     return X
+
+
+def windowed_diff_with_step(Y,lead_time=5, window_size=6, h=5):
+    '''For 1d array Y, computes differences between elements Y[i]-Y[i-h], where h is a step size.
+    Generally, h is chosen to be equal to the lead time: `h=lead_time`.
+
+    Arg-s:
+    - Y: input (1d array, e.g. time series data), this should be normalised e.g. x_norm.
+    - lead_time: lead time for Y(t+lead_time) you are predicting using data from Y(t+0) and before.
+    - window_size : window size, features are computed from a window with size "window_size".
+    This window includes [Y(t+0),...., Y(t-window_size+1)].
+    - h : step size for differences Y[i]-Y[i-h].
+
+    Returns an array with:
+    - len(Y) - (`window_size`+lead_time-1) rows, and
+    - (`window_size`-h)+2 columns, where 1st col. is target Y[t+lead_time],
+    2nd col is current Y[t+0], and (`window_size`-h)di fferences with step h:
+    [ Y[t+0]-Y[t-h], Y[t-1]-Y[(t-1)-h], ..., Y[(t-(window_size-1-h)]-Y[t-window_size+1]  ]
+    '''
+    X = windowed_data(Y, lead_time=lead_time, window_size=window_size)
+    Xout = [X[:,:2], X[:,1:(window_size+1-h)]-X[:,1+h:]] # [Ylead, Y0, Y[t+0]-Y[t-h],Y[t-1]-Y[t-h-1],... ]
+    return np.concatenate(Xout,axis=1)
 
 
 def download_energy_latest(file_url_='https://ai4impact.org/P003/historical/energy-ile-de-france.csv',
