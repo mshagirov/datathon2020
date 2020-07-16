@@ -14,16 +14,16 @@ Suggested way to use and edit `./src/*.py` files and notebook templates in `./nb
 ---
 - `./src` python source code (2nd part of datathon).
 - `./nbs` notebook templates for normalising, preprocessing, training and prediction steps.
-- `./lab1` and `./lab2` are self-contained codes and notebooks for labs 1 and 2 (1st part of the datathon)
+- `/NN101/lab1` and `/NN101/lab2` are self-contained codes and notebooks for labs 1 and 2 (1st part of the datathon)
 - Datasets:
-    - _lab 1_
+    - _lab1_
         - Raw training and test datasets in `./lab1/sg_temps` (`*.csv` files)
         - Raw `sg-temps` dataset stats: `lab1/sg_temps_stats.csv`
     - _lab2_  datasets and stats:
         - Raw dataset (has missing values for some hours): `./lab2/data/PJM_Load_hourly.csv`
         - Raw dataset stats: `./lab2/data_stats.csv`
         - Test and training datasets (not normalized data): `./lab2/data/test.csv` and `./lab2/data/train.csv`
-    - _NN102_ (week 2)
+    - _NN202_ (week 2)
       - `./NN102/sg_temps` containes raw (`sg_temps_raw.csv`) and normalised (`sg_temps.csv`), data was normalised by shifting it by mean $\mu\approx28.0$ and scaling it by the S.D. $\sigma\approx0.8$. $$x_{norm}=\frac{x_{raw}-\mu}{\sigma}$$.
     - _P003_ (dataset for the challenge)
       - `./P003/datasets/` contains:
@@ -33,6 +33,8 @@ Suggested way to use and edit `./src/*.py` files and notebook templates in `./nb
           1. `eCO2mix_RTE_Ile-de-France_Annuel-Definitif_2018.xls`
           1. `eCO2mix_RTE_Ile-de-France_En-cours-Consolide_FIXED_ERRCOLS.xls` (this is clean version of `eCO2mix_RTE_Ile-de-France_En-cours-Consolide.xls` data after removing empty columns)
           1. `eCO2mix_RTE_Ile-de-France_En-cours-TR.xls` (near real-time data, date and time are in Paris time)
+        - Energy Generation Data for Ile-de-France, (averaged for **1h frequencies**, in **kWh**)
+          - `energy-ile-de-france.csv`
         - Wind Forecast Data (from [Terra Weather](http://www.terra-weather.com/)) from two weather models for major wind farm locations in Ile-de-France region:
           1. `/model1/` contains latest forecasts for model 1.
           1. `/model2/` latest forecasts for model 2.
