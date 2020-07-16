@@ -281,3 +281,45 @@ def read_forecast(file_path):
     df.index = df.index.tz_convert(None) # remove UTC
     del df['Time'] # delete "time" column
     return df
+
+def join_model_historical(fname_hist,fname_model,energy_df_index):
+    '''read historical and new forecasts and join them in time,
+    new index will be from earliest to latest time, min and max of both
+    forecasts and energy times.'''
+    df=pd.concat([read_forecast(fname_hist),
+                  read_forecast(fname_model)], axis=0)
+    date_range = pd.date_range(min([energy_df_index.min(),df.index.min()]),
+                               max([energy_df_index.max(),df.index.max()]),freq='H')
+    return df.reindex(date_range)
+
+
+def direction2vector(df,df_name):
+    ''' Convert Speed and Direction(angle) into 2D vector using [sin,cos]
+    df should have columns "Speed(m/s)" and "Direction (deg N)",
+    names for new columns will start with "df_name"'''
+    dir_in_radians = np.deg2rad( df['Direction (deg N)'].values )
+
+    newdf = pd.DataFrame({df_name+'_sin':df['Speed(m/s)'].values*np.sin(dir_in_radians),
+                          df_name+'_cos':df['Speed(m/s)'].values*np.cos(dir_in_radians)},
+                         index=df.index)
+    return newdf
+
+
+def readlocation_as_vec(model_n,loc_k, energy_df_index):
+    '''model_n : 1 or 2 (model type), loc_k: 0 to 7 (index for datautils.locations)'''
+    df_name = f"model{model_n}_{locations[loc_k]}"
+    df = join_model_historical(f"./datasets/historical{model_n}/{locations[loc_k]}{'-b' if model_n==2 else ''}.csv",
+                               f"./datasets/model{model_n}/{locations[loc_k]}{'-b' if model_n==2 else ''}.csv" ,
+                              energy_df_index)
+    return direction2vector(df,df_name)
+
+
+def average_forecast_models(forecast_df):
+    '''Average wind forecast vectors (sin,cos) from to forecast models.
+    - forecast_df must have columns "model1_{farm}_sin" and  "model2_{farm}_cos"
+    where "farm" is one of the locations (one from datautils.locations).'''
+    dfs_avgmodels={}
+    for farm in locations:
+        dfs_avgmodels[f"{farm}_sin"] = (forecast_df[f"model1_{farm}_sin"] + forecast_df[f"model2_{farm}_sin"])/2
+        dfs_avgmodels[f"{farm}_cos"] = (forecast_df[f"model1_{farm}_cos"] + forecast_df[f"model2_{farm}_cos"])/2
+    return pd.DataFrame(dfs_avgmodels)
