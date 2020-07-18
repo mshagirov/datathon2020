@@ -10,9 +10,9 @@
 #
 # If you see notebooks not stripped, checked the filters are applied in .gitattributes
 #
-[filter "clean-nbs"]
-        clean = nbdev_clean_nbs --read_input_stream True
-        smudge = cat
-        required = true
+# [filter "clean-nbs"]
+#         clean = nbdev_clean_nbs --read_input_stream True
+#         smudge = cat
+#         required = true
 [diff "ipynb"]
         textconv = nbdev_clean_nbs --disp True --fname
