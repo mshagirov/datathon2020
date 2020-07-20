@@ -290,7 +290,7 @@ def join_model_historical(fname_hist,fname_model,energy_df_index):
     df_hist = read_forecast(fname_hist)
     df_modl = read_forecast(fname_model)
     df_modl = df_modl.loc[df_modl.index>df_hist.index.max()]
-    df=pd.concat([df_hist,df_modl], axis=0)
+    df=pd.concat([df_hist,df_modl], axis=0,sort=False)
     
     date_range = pd.date_range(min([energy_df_index.min(),df.index.min()]),
                                max([energy_df_index.max(),df.index.max()]),freq='H')
