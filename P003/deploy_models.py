@@ -282,5 +282,5 @@ while deployment_end_time>utc_now():
     print(url_response.decode())
     print(f'---\n {utc_now()}: Time elapsed: {utc_now()-t0}\n---\n')
     with open('rt_predictions.txt', 'a') as the_file:
-        the_file.write(f'{utc_now()}: {Y_pred} (for {need_timee()})\n{url_response.decode()}\n')
+        the_file.write(f'{utc_now()}: {Y_pred} (for {need_time()}) {url_response.decode()}\n')
 
