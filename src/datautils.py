@@ -286,8 +286,12 @@ def join_model_historical(fname_hist,fname_model,energy_df_index):
     '''read historical and new forecasts and join them in time,
     new index will be from earliest to latest time, min and max of both
     forecasts and energy times.'''
-    df=pd.concat([read_forecast(fname_hist),
-                  read_forecast(fname_model)], axis=0)
+    
+    df_hist = read_forecast(fname_hist)
+    df_modl = read_forecast(fname_model)
+    df_modl = df_modl.loc[df_modl.index>df_hist.index.max()]
+    df=pd.concat([df_hist,df_modl], axis=0)
+    
     date_range = pd.date_range(min([energy_df_index.min(),df.index.min()]),
                                max([energy_df_index.max(),df.index.max()]),freq='H')
     return df.reindex(date_range)
