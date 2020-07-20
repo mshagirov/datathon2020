@@ -7,13 +7,14 @@ class fcNet(nn.Module):
     '''Fully-connected (FC) network model.
     Output layer has no activation, i.e. it's a plain linear layer.
     '''
-    def __init__(self,input_dim=1,layer_dims=[],output_dim=1, dropout_p=[]):
+    def __init__(self,input_dim=1,layer_dims=[],output_dim=1, dropout_p=[], acFn=nn.ReLU, acFn_kwargs={}):
         '''
         Arg-s:
         - input_dim : input dimensions, e.g. 3
         - layer_dims : list of dimensions for hidden layers (layer sizes)
         - output_dim: output dimensions {default: 1}
         - dropout_p : a list of dropout probabilities.
+        - acFn: activation function.
         For each layer if len==len(layer_dims), and dropout prob-y 
         for all layers if len==1, and no dropout if len==0. 
         
@@ -28,7 +29,7 @@ class fcNet(nn.Module):
             dropout_p = [dropout_p[0] for k in range(len(layer_dims)) ]
         
         hidden_layers = [('linear1',nn.Linear(input_dim, layer_dims[0])),
-                        ('activation1',nn.ReLU()) ]# input->layer1
+                        ('activation1',acFn(**acFn_kwargs)) ]# input->layer1
 
         if len(dropout_p)>0:
             if dropout_p[0]>0:
@@ -38,7 +39,7 @@ class fcNet(nn.Module):
             hidden_layers.append(
                 ('linear'+str(k+2), nn.Linear(layer_dims[k], layer_dims[k+1]) ) )
             hidden_layers.append(
-                ('activation'+str(k+2), nn.ReLU() ) )
+                ('activation'+str(k+2), acFn(**acFn_kwargs) ) )
             if len(dropout_p)>0:
                 if dropout_p[k+1]>0:
                     hidden_layers.append(
