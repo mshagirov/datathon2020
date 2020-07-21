@@ -146,3 +146,105 @@ Value   : 18138
 
 2020-07-21 00:11:12: 11044 (for 2020-07-21 00:00:00) Submission time closed 
 
+2020-07-21 00:51:32: 18612 (for 2020-07-21 00:00:00) Submitted 
+Received: 21-Jul-2020 00:51:31 UTC 
+For     : 21-Jul-2020 18:00:00 UTC 
+Value   : 18612 
+
+2020-07-21 01:00:56: 18612 (for 2020-07-21 00:00:00) Submitted 
+Received: 21-Jul-2020 01:00:54 UTC 
+For     : 21-Jul-2020 18:00:00 UTC 
+Value   : 18612 
+
+2020-07-21 01:09:25: 18612 (for 2020-07-21 00:00:00) Submitted 
+Received: 21-Jul-2020 01:09:24 UTC 
+For     : 21-Jul-2020 18:00:00 UTC 
+Value   : 18612 
+
+2020-07-21 01:10:16: 10978 (for 2020-07-21 01:00:00) Submitted 
+Received: 21-Jul-2020 01:10:16 UTC 
+For     : 21-Jul-2020 18:00:00 UTC 
+Value   : 10978 
+
+2020-07-21 01:51:15: 25752 (for 2020-07-21 01:00:00) Submitted 
+Received: 21-Jul-2020 01:51:14 UTC 
+For     : 21-Jul-2020 19:00:00 UTC 
+Value   : 25752 
+
+2020-07-21 02:00:18: 25752 (for 2020-07-21 01:00:00) Submitted 
+Received: 21-Jul-2020 02:00:16 UTC 
+For     : 21-Jul-2020 19:00:00 UTC 
+Value   : 25752 
+
+2020-07-21 02:09:16: 25752 (for 2020-07-21 01:00:00) Submitted 
+Received: 21-Jul-2020 02:09:15 UTC 
+For     : 21-Jul-2020 19:00:00 UTC 
+Value   : 25752 
+
+2020-07-21 02:09:49: 25752 (for 2020-07-21 01:00:00) Submitted 
+Received: 21-Jul-2020 02:09:47 UTC 
+For     : 21-Jul-2020 19:00:00 UTC 
+Value   : 25752 
+
+2020-07-21 02:10:53: 11767 (for 2020-07-21 02:00:00) Submitted 
+Received: 21-Jul-2020 02:10:52 UTC 
+For     : 21-Jul-2020 19:00:00 UTC 
+Value   : 11767 
+
+2020-07-21 02:51:15: 30200 (for 2020-07-21 02:00:00) Submitted 
+Received: 21-Jul-2020 02:51:14 UTC 
+For     : 21-Jul-2020 20:00:00 UTC 
+Value   : 30200 
+
+2020-07-21 03:00:18: 30200 (for 2020-07-21 02:00:00, direct (2020-07-21 02:00:00)) Submitted 
+Received: 21-Jul-2020 03:00:16 UTC 
+For     : 21-Jul-2020 20:00:00 UTC 
+Value   : 30200 
+
+2020-07-21 03:09:17: 30200 (for 2020-07-21 02:00:00, direct (2020-07-21 02:00:00)) Submitted 
+Received: 21-Jul-2020 03:09:15 UTC 
+For     : 21-Jul-2020 20:00:00 UTC 
+Value   : 30200 
+
+2020-07-21 03:09:54: 30200 (for 2020-07-21 02:00:00, direct (2020-07-21 02:00:00)) Submitted 
+Received: 21-Jul-2020 03:09:52 UTC 
+For     : 21-Jul-2020 20:00:00 UTC 
+Value   : 30200 
+
+2020-07-21 03:11:02: 18422 (for 2020-07-21 03:00:00, iterative (2020-07-21 02:00:00)) Submission time closed 
+
+2020-07-21 04:00:17: 31513 (for 2020-07-21 03:00:00, direct (2020-07-21 03:00:00)) Submitted 
+Received: 21-Jul-2020 04:00:17 UTC 
+For     : 21-Jul-2020 21:00:00 UTC 
+Value   : 31513 
+
+2020-07-21 04:09:16: 31513 (for 2020-07-21 03:00:00, direct (2020-07-21 03:00:00)) Submitted 
+Received: 21-Jul-2020 04:09:14 UTC 
+For     : 21-Jul-2020 21:00:00 UTC 
+Value   : 31513 
+
+2020-07-21 04:09:48: 31513 (for 2020-07-21 03:00:00, direct (2020-07-21 03:00:00)) Submitted 
+Received: 21-Jul-2020 04:09:47 UTC 
+For     : 21-Jul-2020 21:00:00 UTC 
+Value   : 31513 
+
+2020-07-21 04:10:52: 29728 (for 2020-07-21 04:00:00, iterative (2020-07-21 03:00:00)) Submitted 
+Received: 21-Jul-2020 04:10:51 UTC 
+For     : 21-Jul-2020 21:00:00 UTC 
+Value   : 29728 
+
+2020-07-21 04:50:27: 33378 (for 2020-07-21 04:00:00, direct (2020-07-21 04:00:00)) Submitted 
+Received: 21-Jul-2020 04:50:25 UTC 
+For     : 21-Jul-2020 22:00:00 UTC 
+Value   : 33378 
+
+2020-07-21 05:00:29: 33378 (for 2020-07-21 04:00:00, direct (2020-07-21 04:00:00)) Submitted 
+Received: 21-Jul-2020 05:00:28 UTC 
+For     : 21-Jul-2020 22:00:00 UTC 
+Value   : 33378 
+
+2020-07-21 05:09:29: 33378 (for 2020-07-21 04:00:00, direct (2020-07-21 04:00:00)) Submitted 
+Received: 21-Jul-2020 05:09:28 UTC 
+For     : 21-Jul-2020 22:00:00 UTC 
+Value   : 33378 
+

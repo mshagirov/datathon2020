@@ -211,15 +211,20 @@ while deployment_end_time>utc_now():
     curr_utc_time = utc_now()
     min_now = curr_utc_time.minute + curr_utc_time.second/60
     if (min_now<50) and (min_now>10):
-         # deploy time 1: wait for HH:51min
-        time_left = (51-min_now)*60 # in seconds
-    elif (min_now>50):
+        # deploy time 1: wait for HH:51min
+        time_left = (50-min_now)*60 # in seconds
+    elif (min_now>=50):
         # deploy time 2: wait for HH:00min
         time_left = (60-min_now)*60 # in seconds
-    elif min_now<10:
+    elif min_now<9:
         #deploy time 3: wait for HH:09min
         time_left = (9-min_now)*60 # in seconds
+    elif (min_now>9.5) and (min_now<50):
+        # deploy time 1: wait for HH:51min
+        time_left = (50-min_now)*60 # in seconds
     print(f'\nSleep {time_left/60:2.0f}mins\n')
+    if (curr_utc_time.minute==0) and (curr_utc_time.second<15):
+        time_left = 0.0
     time.sleep(abs(time_left))
 
     t0 = utc_now()
@@ -248,6 +253,7 @@ while deployment_end_time>utc_now():
     if energy_df[energy_df.index==need_time()].values.shape[0]==0:
         print(f'\nUsing iterative method: latest {energy_date_range[-1]} (need {need_time()})\n')
         Y_pred = iter_predict18(energy_df, energy_date_range[-1])
+        pred_method = f'iterative ({energy_date_range[-1]})'
     else:
         print(f'\nComputing T+18 forecast directly (latest {energy_date_range[-1]}, need {need_time()})\n')
         # we need this range of dates for features
@@ -277,10 +283,15 @@ while deployment_end_time>utc_now():
         Y_pred = np.mean(np.array(predictT18(Xdeploy,Y0))*scale_ +shift_)
         # Set 0kWh as min prediction, and convert to integer
         Y_pred = np.maximum(0,int(Y_pred))
-
+        pred_method = f'direct ({energy_date_range[-1]})'
+    
+    curr_utc_time = utc_now()
+    curr_mins = curr_utc_time.minute +curr_utc_time.second/60
+    if (curr_mins<50) and (curr_mins>10):
+        continue
     url_response = send_value2url(Y_pred)
     print(url_response.decode())
     print(f'---\n {utc_now()}: Time elapsed: {utc_now()-t0}\n---\n')
     with open('rt_predictions.txt', 'a') as the_file:
-        the_file.write(f'{utc_now()}: {Y_pred} (for {need_time()}) {url_response.decode()}\n')
+        the_file.write(f'{utc_now()}: {Y_pred} (for {need_time()}, {pred_method}) {url_response.decode()}\n')
 
