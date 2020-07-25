@@ -84,18 +84,39 @@ class diffNet(nn.Module):
         return self.net(x) + Y0
 
 
+    
+class diffNet_scaler(nn.Module):
+    '''
+    Difference network. Computes y(T+lead_time) = diffNet(x, y(T+0)). Similar to `diffNet` model but has additional
+    `xnew=tanh(weigh*x)` input scaling layer (gate) that scales inputs before passing them to the dense layers (fcNet).
+    
+    Arg-s: same as diffNet and fcNet.
+    '''
+    def __init__(self,**kwargs):
+        super(diffNet_scaler,self).__init__()
+        self.input_dim = kwargs['input_dim']
+        
+        #         self.weights = nn.Parameter(torch.ones(1, self.input_dim)/np.sqrt(self.input_dim))
+        self.weights = nn.Parameter(torch.ones(1, self.input_dim))
+        self.net = fcNet(**kwargs)
+        
+    def forward(self, x, Y0):
+        x_new = torch.tanh( torch.clamp(self.weights,min=0.0)*x)
+        return self.net(x_new) + Y0
+
+
 
 def get_model(net_type='fcNet', opt_type = 'Adam',
               model_kwargs = {}, solver_kwargs = {}, device=torch.device("cpu")):
     '''
     Arg-s:
-    - net_type : type of the network model, one of ['fcNet', 'diffNet'].
+    - net_type : type of the network model, one of ['fcNet', 'diffNet', 'diffNet_scaler'].
     - opt_type : type of solver/optimizer one of ['Adam', 'SGD'].
     - model_kwargs : dict of arguments for the model,
     e.g. {input_dim=5, layer_dims=[8,4], output_dim=1}
     - solver_kwargs: dict of arg-s for solver/optimizer
     '''
-    models = {'fcNet': fcNet, 'diffNet':diffNet}
+    models = {'fcNet': fcNet, 'diffNet':diffNet, 'diffNet_scaler':diffNet_scaler}
     model = models[net_type](**model_kwargs).to(device)
     
     optims = {'Adam': optim.Adam, 'SGD': optim.SGD}

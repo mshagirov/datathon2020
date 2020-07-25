@@ -50,6 +50,7 @@ wind_scale_ = 8.0 # half of max speed (wind vector)
 model_dir = os.path.relpath('./best_models')
 # get all models that match the pattern:
 model_filenames = glob.glob(os.path.join(model_dir,'24Jul2020_*'))
+# model_filenames = ['best_models/24Jul2020_0150_ver1.pkl']
 
 # Just in case
 deployment_end_time  = pd.to_datetime('2020-12-29 10:00:00')
