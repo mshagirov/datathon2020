@@ -2,7 +2,6 @@
 TESTING = False
 
 # # # # # # # # # # # # # # # # # # #
-
 import os, glob, pickle
 import urllib.request
 import torch, numpy as np
@@ -23,9 +22,14 @@ if os.path.basename(os.getcwd())!='P003':
     print('Not in /P003 folder, changing directory to P003')
     lib_path = os.path.expanduser(os.path.relpath('~/images/codesDIR/datathon2020/P003'))
     os.chdir(lib_path)
+
+# Import src.datautils
     
 from src import datautils
 
+# import matplotlib
+#plt.style.use('ggplot')
+#%matplotlib inline
 
 # # # # # # # # # # # # # # # # # # #
 #             CONSTANTS             #
@@ -45,7 +49,8 @@ wind_scale_ = 8.0 # half of max speed (wind vector)
 # location of networks
 model_dir = os.path.relpath('./best_models')
 # get all models that match the pattern:
-model_filenames = glob.glob(os.path.join(model_dir,'25Jul2020_1640*'))
+model_filenames = glob.glob(os.path.join(model_dir,'24Jul2020_*'))
+# model_filenames = ['best_models/24Jul2020_0150_ver1.pkl']
 
 # Just in case
 deployment_end_time  = pd.to_datetime('2020-12-29 10:00:00')
@@ -60,7 +65,7 @@ print(f'MIN_ENERGY is set to :{MIN_ENERGY}')
 time_offset = pd.Timedelta(minutes=0,seconds=0) # correction to cpu time
 # jhub offset--> pd.Timedelta(minutes=6,seconds=-9)
 if TESTING:
-    time_offset = pd.Timedelta(hours=-10,minutes=20,seconds=9)
+    time_offset = pd.Timedelta(hours=10,minutes=0,seconds=0)
 
 def utc_now(time_delta = time_offset):
     t = datetime.datetime.utcnow()
@@ -77,6 +82,26 @@ def need_time():
         return curr_time_utc.round('H')-pd.Timedelta(hours=1)
     return curr_time_utc.round('H')
 
+def sleep4time(curr_utc_time):
+    # sleep until 50min
+    min_now = curr_utc_time.minute + curr_utc_time.second/60
+    time_left = 0
+    if (min_now<50) and (min_now>10):
+        # deploy time 1: wait for HH:51min
+        time_left = (50-min_now)*60 # in seconds
+    elif (min_now>=50):
+        # deploy time 2: wait for HH:00min
+        time_left = (60-min_now)*60 # in seconds
+    elif min_now<9:
+        #deploy time 3: wait for HH:09min
+        time_left = (9-min_now)*60 # in seconds
+    elif (min_now>9.5) and (min_now<50):
+        # deploy time 1: wait for HH:51min
+        time_left = (50-min_now)*60 # in seconds
+    if (curr_utc_time.minute==0) and (curr_utc_time.second<15):
+        time_left = 0.0
+    print(f'\nSleep {time_left/60:2.0f}mins\n')
+    time.sleep(abs(time_left))
 
 def send_value2url(val):
     html=b''
@@ -142,8 +167,10 @@ def iter_predict18(energy_df, latest_energy_time_):
                                      need_time()+pd.Timedelta(hours=18),freq='H')
     wind_df_norm = read_wind_forecasts_w_range(wind_speed_range)/wind_scale_
     
+    X_clock = np.cos(np.pi*(tau_fill.hour.values)/23)**2
+    
     # fill in missing values
-    for t in tau_fill:
+    for k, t in enumerate(tau_fill):
         need_range = pd.date_range(t-pd.Timedelta(hours=window_size-1+18),
                                    t-pd.Timedelta(hours=18),freq='H')
         Y_fill = eng_df_norm.loc[need_range].values.reshape(1,-1)
@@ -162,6 +189,7 @@ def iter_predict18(energy_df, latest_energy_time_):
         
         X_fill = [Ydiff_fill]
         X_fill.extend(X_windows)
+        X_fill.append(X_clock[k].reshape(1,1))
         X_fill = np.concatenate(X_fill, axis=1)
         eng_df_norm.loc[t] = np.mean(predictT18(X_fill,Y0_fill))
     
@@ -177,6 +205,11 @@ def iter_predict18(energy_df, latest_energy_time_):
     need_range_wind = pd.date_range(need_range[0], need_range[-1]+pd.Timedelta(hours=18),freq='H')
     X_df = wind_df_norm.loc[need_range_wind].values
     X_norm = np.sqrt(X_df[:,0::2]**2 + X_df[:,1::2]**2)# wind speed from wind vectors
+    
+    # Time of day T+18
+    X_clock = np.cos(np.pi*(need_time()+pd.Timedelta(hours=18)).hour/23)**2
+    X_clock = X_clock.reshape(-1,1)
+    
     X_windows = []
     for l in range(X_norm.shape[1]):
         X_windows.append(
@@ -184,15 +217,15 @@ def iter_predict18(energy_df, latest_energy_time_):
     
     Xdeploy = [Ydiff]
     Xdeploy.extend(X_windows)
+    Xdeploy.append(X_clock)
     Xdeploy = np.concatenate(Xdeploy, axis=1)
     
     # Predict using 5 best models, and de-normalise, take mean for all predictions:
     Y_pred = np.mean(np.array(predictT18(Xdeploy,Y0))*scale_ +shift_)
     # Set 0kWh as min prediction, and convert to integer
-    Y_pred = int(np.maximum(0, Y_pred))
+    Y_pred = np.maximum(0,int(Y_pred))
     
     return Y_pred
-
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -202,53 +235,22 @@ print('\n'+'- - '*5+
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # # # # # # # # # # # # DEPLOYMENT LOOP # # # # # # # # # # # # #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-time_left = 0
 while deployment_end_time>utc_now():
-    # sleep until 50min
-    curr_utc_time = utc_now()
-    min_now = curr_utc_time.minute + curr_utc_time.second/60
-    if (min_now<50) and (min_now>10):
-        # deploy time 1: wait for HH:51min
-        time_left = (50-min_now)*60 # in seconds
-    elif (min_now>=50):
-        # deploy time 2: wait for HH:00min
-        time_left = (60-min_now)*60 # in seconds
-    elif min_now<=9:
-        #deploy time 3: wait for HH:09min
-        time_left = (9-min_now)*60 # in seconds
-    elif (min_now>9) and (min_now<50):
-        # deploy time 1: wait for HH:51min
-        time_left = (50-min_now)*60 # in seconds
-    if (curr_utc_time.minute==0) and (curr_utc_time.second<15):
-        time_left = 0.0
-    print(f'\nSleep {time_left/60:2.0f}mins\n')
-    
     if not TESTING:
-        time.sleep(abs(time_left))
-
-    t0 = utc_now()
-    # Download New Forecasts:
-    datautils.download_forecasts_all()
-
-    # AI4Impact source:
-    datautils.download_energy_latest()
-    energy_1 = datautils.read_ai4impact_energy('datasets/energy-ile-de-france.csv')
-
-    # RTE source:
-    #RTE_file_path = datautils.download_raw_from_RTE('real_time',return_filelist=True)
-    #energy_2=datautils.read_RTE_as_kwh(RTE_file_path[0],convert2UTC=True)
-
-    print(f'---\nTime elapsed: {utc_now()-t0}\n---\n')
-
-    # Select latest energy source
-    #enrg_src = np.argmax([energy_1.index[-1], energy_2.index[-1]])
-    energy_df  = energy_1 # energy_1 if enrg_src==0 else energy_2
-    energy_date_range = pd.date_range(energy_df.index[0],energy_df.index[-1],freq='H')
-
-
+        sleep4time(utc_now())
+        t0 = utc_now()
+        # Download New Forecasts:
+        datautils.download_forecasts_all()
+        # AI4Impact source:
+        datautils.download_energy_latest()
+        print(f'---\nTime elapsed: {utc_now()-t0}\n---\n')
+    
+    # energy readings
+    energy_df = datautils.read_ai4impact_energy('datasets/energy-ile-de-france.csv')
+    energy_date_range = pd.date_range(energy_df.index[0],energy_df.index[-1],freq='H') 
+    
     need_range = pd.date_range(need_time()-pd.Timedelta(hours=window_size-1),need_time(),freq='H')
-
-
+    
     if energy_df[energy_df.index==need_time()].values.shape[0]==0:
         print(f'\nUsing iterative method: latest {energy_date_range[-1]} (need {need_time()})\n')
         Y_pred = iter_predict18(energy_df, energy_date_range[-1])
@@ -256,15 +258,18 @@ while deployment_end_time>utc_now():
     else:
         print(f'\nComputing T+18 forecast directly (latest {energy_date_range[-1]}, need {need_time()})\n')
         # we need this range of dates for features
-        oldest_time = need_time()-pd.Timedelta(hours=window_size-1)
-        wind_speed_latest_time = need_time()+pd.Timedelta(hours=18)
-        wind_speed_range = pd.date_range(oldest_time,wind_speed_latest_time,freq='H')
-
+        oldest_time = need_time()-pd.Timedelta(hours=window_size-1) # past data with window_size
+        wind_speed_latest_time = need_time()+pd.Timedelta(hours=18) # T+18 wind
+        wind_speed_range = pd.date_range(oldest_time,wind_speed_latest_time,freq='H') # select window_size and all the way to T+18
+        
         wind_df = read_wind_forecasts_w_range(wind_speed_range)
-
         wind_norm = wind_df.values/wind_scale_
         wind_speeds = np.sqrt(wind_norm[:,0::2]**2 + wind_norm[:,1::2]**2)# wind speed from wind vectors
-
+        
+        # Time of day T+18
+        X_clock = np.cos(np.pi*(need_time()+pd.Timedelta(hours=18)).hour/23)**2
+        X_clock = X_clock.reshape(-1,1)
+        
         X_norm_diffwindows = []
         for l in range(wind_speeds.shape[1]):
             X_norm_diffwindows.append(
@@ -277,25 +282,24 @@ while deployment_end_time>utc_now():
         Ydiff = Y[:,0:-1] - Y[:,1:]
         Xdeploy = [Ydiff]
         Xdeploy.extend(X_norm_diffwindows)
+        Xdeploy.append(X_clock)
         Xdeploy = np.concatenate(Xdeploy, axis=1)
         # Predict using 5 best models, and de-normalise, take mean for all predictions:
         Y_pred = np.mean(np.array(predictT18(Xdeploy,Y0))*scale_ +shift_)
         # Set 0kWh as min prediction, and convert to integer
         Y_pred = np.maximum(0,int(Y_pred))
         pred_method = f'direct ({energy_date_range[-1]})'
-    
+        
     curr_utc_time = utc_now()
     curr_mins = curr_utc_time.minute +curr_utc_time.second/60
     if (curr_mins<50) and (curr_mins>10):
         continue
     
-    Y_pred = int(np.maximum(MIN_ENERGY, Y_pred))
-    
+    Y_pred = int(np.maximum(MIN_ENERGY,Y_pred))
     
     url_response = send_value2url(Y_pred)
     print(url_response.decode())
-    print(f'---\n {utc_now()}: Time elapsed: {utc_now()-t0}\n---\n')
-    
     with open('rt_predictions.txt', 'a') as the_file:
         the_file.write(f'{utc_now()}: {Y_pred} (for {need_time()}, {pred_method}) {url_response.decode()}\n')
+    print(f'---\n {utc_now()}: Time elapsed: {utc_now()-t0}\n---\n')
 

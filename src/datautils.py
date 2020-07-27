@@ -211,6 +211,37 @@ locations = ['guitrancourt', 'lieusaint', 'lvs-pussay', 'parc-du-gatinais',
  'arville', 'boissy-la-riviere', 'angerville-1', 'angerville-2']
 # angerville-2 is "Les Pointes" wind farm
 
+# Wind farm max outputs in kW:
+# 'parc-du-gatinais': 16000 - 24000 kW
+location_nominal = {'guitrancourt': 60,'lieusaint': 130, 'lvs-pussay': 6900, 'parc-du-gatinais': 20000,
+                    'arville': 12000, 'boissy-la-riviere': 15000, 'angerville-1': 8800, 'angerville-2': 11000}
+
+def sincos2features(xsincos_norm):
+    '''xsincos_norm: normalised(!) sin and cos components of wind speeds for 8 locations.
+    Returns array with columns ['weighted average', min_speed, max_speed, med_speed]
+    
+    - weighted average: based on nominal power of the farm.
+    - min_speed: minimum forecasted speed across 8 locations
+    - max_speed: max-m forecasted speed across 8 locations
+    - med_speed: median speed forecasted speed across 8 locations
+    '''
+    loc_power = np.array([location_nominal[l] for l in locations])
+    loc_weight = loc_power/np.sum(loc_power)
+    wind_speeds = np.sqrt(xsincos_norm[:,0::2]**2 + xsincos_norm[:,1::2]**2)
+    x_features = []
+    # weighted average
+    x_features.append(
+        np.concatenate([wind_speeds[:,k].reshape(-1,1)*loc_weight[k] for k in range(len(locations))
+                       ], axis=1 ).sum(axis=1,keepdims=True) )
+    # minimum speed
+    x_features.append(wind_speeds.min(axis=1,keepdims=True))
+    # maximum speed
+    x_features.append(wind_speeds.max(axis=1,keepdims=True))
+    # median
+    x_features.append(np.median(wind_speeds,axis=1,keepdims=True))
+    return np.concatenate(x_features,axis=1)
+
+
 def download_forecasts_latest():
     '''Download latest wind forecasts. Saves all files to
     `./datasets/model1/` and `./datasets/model2/` for two forecast models.'''

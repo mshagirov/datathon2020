@@ -25,7 +25,7 @@ if os.path.basename(os.getcwd())!='P003':
     os.chdir(lib_path)
     
 from src import datautils
-
+from src.nnets import diffmlp, dense
 
 # # # # # # # # # # # # # # # # # # #
 #             CONSTANTS             #
@@ -45,7 +45,7 @@ wind_scale_ = 8.0 # half of max speed (wind vector)
 # location of networks
 model_dir = os.path.relpath('./best_models')
 # get all models that match the pattern:
-model_filenames = glob.glob(os.path.join(model_dir,'25Jul2020_1640*'))
+model_filenames = glob.glob(os.path.join(model_dir,'27Jul2020_1023*'))
 
 # Just in case
 deployment_end_time  = pd.to_datetime('2020-12-29 10:00:00')
@@ -189,7 +189,7 @@ def iter_predict18(energy_df, latest_energy_time_):
     # Predict using 5 best models, and de-normalise, take mean for all predictions:
     Y_pred = np.mean(np.array(predictT18(Xdeploy,Y0))*scale_ +shift_)
     # Set 0kWh as min prediction, and convert to integer
-    Y_pred = int(np.maximum(0, Y_pred))
+    Y_pred = np.maximum(0,int(Y_pred))
     
     return Y_pred
 
@@ -289,7 +289,7 @@ while deployment_end_time>utc_now():
     if (curr_mins<50) and (curr_mins>10):
         continue
     
-    Y_pred = int(np.maximum(MIN_ENERGY, Y_pred))
+    Y_pred = int(np.maximum(MIN_ENERGY,Y_pred))
     
     
     url_response = send_value2url(Y_pred)

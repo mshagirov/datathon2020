@@ -1853,3 +1853,777 @@ Received: 25-Jul-2020 02:09:37 UTC
 For     : 25-Jul-2020 19:00:00 UTC 
 Value   : 38926 
 
+2020-07-25 02:50:16: 38152 (for 2020-07-25 02:00:00, iterative (2020-07-25 01:00:00)) Submitted 
+Received: 25-Jul-2020 02:50:15 UTC 
+For     : 25-Jul-2020 20:00:00 UTC 
+Value   : 38152 
+
+2020-07-25 03:00:19: 23109 (for 2020-07-25 02:00:00, direct (2020-07-25 02:00:00)) Submitted 
+Received: 25-Jul-2020 03:00:17 UTC 
+For     : 25-Jul-2020 20:00:00 UTC 
+Value   : 23109 
+
+2020-07-25 03:09:15: 23109 (for 2020-07-25 02:00:00, direct (2020-07-25 02:00:00)) Submitted 
+Received: 25-Jul-2020 03:09:15 UTC 
+For     : 25-Jul-2020 20:00:00 UTC 
+Value   : 23109 
+2020-07-25 03:50:17: 20784 (for 2020-07-25 03:00:00, iterative (2020-07-25 02:00:00)) Submitted 
+Received: 25-Jul-2020 03:50:15 UTC 
+For     : 25-Jul-2020 21:00:00 UTC 
+Value   : 20784 
+
+2020-07-25 04:00:16: 19251 (for 2020-07-25 03:00:00, direct (2020-07-25 03:00:00)) Submitted 
+Received: 25-Jul-2020 04:00:15 UTC 
+For     : 25-Jul-2020 21:00:00 UTC 
+Value   : 19251 
+
+2020-07-25 04:09:15: 19251 (for 2020-07-25 03:00:00, direct (2020-07-25 03:00:00)) Submitted 
+Received: 25-Jul-2020 04:09:13 UTC 
+For     : 25-Jul-2020 21:00:00 UTC 
+Value   : 19251 
+
+2020-07-25 04:50:28: 25266 (for 2020-07-25 04:00:00, iterative (2020-07-25 03:00:00)) Submitted 
+Received: 25-Jul-2020 04:50:27 UTC 
+For     : 25-Jul-2020 22:00:00 UTC 
+Value   : 25266 
+
+2020-07-25 05:00:35: 22485 (for 2020-07-25 04:00:00, direct (2020-07-25 04:00:00)) Submitted 
+Received: 25-Jul-2020 05:00:34 UTC 
+For     : 25-Jul-2020 22:00:00 UTC 
+Value   : 22485 
+
+2020-07-25 05:09:24: 22485 (for 2020-07-25 04:00:00, direct (2020-07-25 04:00:00)) Submitted 
+Received: 25-Jul-2020 05:09:23 UTC 
+For     : 25-Jul-2020 22:00:00 UTC 
+Value   : 22485 
+
+2020-07-25 05:50:27: 29094 (for 2020-07-25 05:00:00, iterative (2020-07-25 04:00:00)) Submitted 
+Received: 25-Jul-2020 05:50:26 UTC 
+For     : 25-Jul-2020 23:00:00 UTC 
+Value   : 29094 
+
+2020-07-25 06:00:25: 25324 (for 2020-07-25 05:00:00, direct (2020-07-25 05:00:00)) Submitted 
+Received: 25-Jul-2020 06:00:24 UTC 
+For     : 25-Jul-2020 23:00:00 UTC 
+Value   : 25324 
+
+2020-07-25 06:09:24: 25324 (for 2020-07-25 05:00:00, direct (2020-07-25 05:00:00)) Submitted 
+Received: 25-Jul-2020 06:09:23 UTC 
+For     : 25-Jul-2020 23:00:00 UTC 
+Value   : 25324 
+
+2020-07-25 06:50:16: 31415 (for 2020-07-25 06:00:00, iterative (2020-07-25 05:00:00)) Submitted 
+Received: 25-Jul-2020 06:50:15 UTC 
+For     : 26-Jul-2020 00:00:00 UTC 
+Value   : 31415 
+
+2020-07-25 07:00:17: 30504 (for 2020-07-25 06:00:00, direct (2020-07-25 06:00:00)) Submitted 
+Received: 25-Jul-2020 07:00:16 UTC 
+For     : 26-Jul-2020 00:00:00 UTC 
+Value   : 30504 
+
+2020-07-25 07:09:13: 30504 (for 2020-07-25 06:00:00, direct (2020-07-25 06:00:00)) Submitted 
+Received: 25-Jul-2020 07:09:12 UTC 
+For     : 26-Jul-2020 00:00:00 UTC 
+Value   : 30504 
+
+2020-07-25 07:50:46: 31123 (for 2020-07-25 07:00:00, iterative (2020-07-25 06:00:00)) Submitted 
+Received: 25-Jul-2020 07:50:45 UTC 
+For     : 26-Jul-2020 01:00:00 UTC 
+Value   : 31123 
+
+2020-07-25 08:00:38: 29329 (for 2020-07-25 07:00:00, direct (2020-07-25 07:00:00)) Submitted 
+Received: 25-Jul-2020 08:00:37 UTC 
+For     : 26-Jul-2020 01:00:00 UTC 
+Value   : 29329 
+
+2020-07-25 08:09:57: 29329 (for 2020-07-25 07:00:00, direct (2020-07-25 07:00:00)) Submitted 
+Received: 25-Jul-2020 08:09:57 UTC 
+For     : 26-Jul-2020 01:00:00 UTC 
+Value   : 29329 
+
+2020-07-25 08:50:13: 32310 (for 2020-07-25 08:00:00, iterative (2020-07-25 07:00:00)) Submitted 
+Received: 25-Jul-2020 08:50:13 UTC 
+For     : 26-Jul-2020 02:00:00 UTC 
+Value   : 32310 
+
+2020-07-25 09:00:16: 25272 (for 2020-07-25 08:00:00, direct (2020-07-25 08:00:00)) Submitted 
+Received: 25-Jul-2020 09:00:15 UTC 
+For     : 26-Jul-2020 02:00:00 UTC 
+Value   : 25272 
+
+2020-07-25 09:09:13: 25272 (for 2020-07-25 08:00:00, direct (2020-07-25 08:00:00)) Submitted 
+Received: 25-Jul-2020 09:09:13 UTC 
+For     : 26-Jul-2020 02:00:00 UTC 
+Value   : 25272 
+
+2020-07-25 09:50:13: 26177 (for 2020-07-25 09:00:00, iterative (2020-07-25 08:00:00)) Submitted 
+Received: 25-Jul-2020 09:50:12 UTC 
+For     : 26-Jul-2020 03:00:00 UTC 
+Value   : 26177 
+
+2020-07-25 10:00:15: 23230 (for 2020-07-25 09:00:00, direct (2020-07-25 09:00:00)) Submitted 
+Received: 25-Jul-2020 10:00:14 UTC 
+For     : 26-Jul-2020 03:00:00 UTC 
+Value   : 23230 
+
+2020-07-25 10:09:13: 23230 (for 2020-07-25 09:00:00, direct (2020-07-25 09:00:00)) Submitted 
+Received: 25-Jul-2020 10:09:12 UTC 
+For     : 26-Jul-2020 03:00:00 UTC 
+Value   : 23230 
+
+2020-07-25 10:50:26: 22745 (for 2020-07-25 10:00:00, iterative (2020-07-25 09:00:00)) Submitted 
+Received: 25-Jul-2020 10:50:25 UTC 
+For     : 26-Jul-2020 04:00:00 UTC 
+Value   : 22745 
+
+2020-07-25 11:00:26: 23307 (for 2020-07-25 10:00:00, direct (2020-07-25 10:00:00)) Submitted 
+Received: 25-Jul-2020 11:00:25 UTC 
+For     : 26-Jul-2020 04:00:00 UTC 
+Value   : 23307 
+
+2020-07-25 11:09:25: 23307 (for 2020-07-25 10:00:00, direct (2020-07-25 10:00:00)) Submitted 
+Received: 25-Jul-2020 11:09:24 UTC 
+For     : 26-Jul-2020 04:00:00 UTC 
+Value   : 23307 
+
+2020-07-25 11:50:27: 22185 (for 2020-07-25 11:00:00, iterative (2020-07-25 10:00:00)) Submitted 
+Received: 25-Jul-2020 11:50:27 UTC 
+For     : 26-Jul-2020 05:00:00 UTC 
+Value   : 22185 
+
+2020-07-25 12:00:23: 22820 (for 2020-07-25 11:00:00, direct (2020-07-25 11:00:00)) Submitted 
+Received: 25-Jul-2020 12:00:21 UTC 
+For     : 26-Jul-2020 05:00:00 UTC 
+Value   : 22820 
+
+2020-07-25 12:09:19: 22820 (for 2020-07-25 11:00:00, direct (2020-07-25 11:00:00)) Submitted 
+Received: 25-Jul-2020 12:09:18 UTC 
+For     : 26-Jul-2020 05:00:00 UTC 
+Value   : 22820 
+
+2020-07-25 12:50:39: 20129 (for 2020-07-25 12:00:00, iterative (2020-07-25 11:00:00)) Submitted 
+Received: 25-Jul-2020 12:50:38 UTC 
+For     : 26-Jul-2020 06:00:00 UTC 
+Value   : 20129 
+
+2020-07-25 13:00:31: 21568 (for 2020-07-25 12:00:00, direct (2020-07-25 12:00:00)) Submitted 
+Received: 25-Jul-2020 13:00:29 UTC 
+For     : 26-Jul-2020 06:00:00 UTC 
+Value   : 21568 
+
+2020-07-25 13:09:27: 21568 (for 2020-07-25 12:00:00, direct (2020-07-25 12:00:00)) Submitted 
+Received: 25-Jul-2020 13:09:25 UTC 
+For     : 26-Jul-2020 06:00:00 UTC 
+Value   : 21568 
+
+2020-07-25 13:50:14: 19583 (for 2020-07-25 13:00:00, iterative (2020-07-25 12:00:00)) Submitted 
+Received: 25-Jul-2020 13:50:13 UTC 
+For     : 26-Jul-2020 07:00:00 UTC 
+Value   : 19583 
+
+2020-07-25 14:00:18: 23479 (for 2020-07-25 13:00:00, direct (2020-07-25 13:00:00)) Submitted 
+Received: 25-Jul-2020 14:00:18 UTC 
+For     : 26-Jul-2020 07:00:00 UTC 
+Value   : 23479 
+
+2020-07-25 14:09:26: 23479 (for 2020-07-25 13:00:00, direct (2020-07-25 13:00:00)) Submitted 
+Received: 25-Jul-2020 14:09:24 UTC 
+For     : 26-Jul-2020 07:00:00 UTC 
+Value   : 23479 
+
+2020-07-25 14:50:29: 18971 (for 2020-07-25 14:00:00, iterative (2020-07-25 13:00:00)) Submitted 
+Received: 25-Jul-2020 14:50:28 UTC 
+For     : 26-Jul-2020 08:00:00 UTC 
+Value   : 18971 
+
+2020-07-25 15:00:15: 27906 (for 2020-07-25 14:00:00, direct (2020-07-25 14:00:00)) Submitted 
+Received: 25-Jul-2020 15:00:15 UTC 
+For     : 26-Jul-2020 08:00:00 UTC 
+Value   : 27906 
+
+2020-07-25 15:09:13: 27906 (for 2020-07-25 14:00:00, direct (2020-07-25 14:00:00)) Submitted 
+Received: 25-Jul-2020 15:09:13 UTC 
+For     : 26-Jul-2020 08:00:00 UTC 
+Value   : 27906 
+
+2020-07-25 15:50:17: 20777 (for 2020-07-25 15:00:00, iterative (2020-07-25 14:00:00)) Submitted 
+Received: 25-Jul-2020 15:50:15 UTC 
+For     : 26-Jul-2020 09:00:00 UTC 
+Value   : 20777 
+
+2020-07-25 16:00:18: 29989 (for 2020-07-25 15:00:00, direct (2020-07-25 15:00:00)) Submitted 
+Received: 25-Jul-2020 16:00:17 UTC 
+For     : 26-Jul-2020 09:00:00 UTC 
+Value   : 29989 
+
+2020-07-25 16:09:13: 28646 (for 2020-07-25 15:00:00, direct (2020-07-25 15:00:00)) Submitted 
+Received: 25-Jul-2020 16:09:13 UTC 
+For     : 26-Jul-2020 09:00:00 UTC 
+Value   : 28646 
+
+2020-07-25 16:50:28: 19298 (for 2020-07-25 16:00:00, iterative (2020-07-25 15:00:00)) Submitted 
+Received: 25-Jul-2020 16:50:27 UTC 
+For     : 26-Jul-2020 10:00:00 UTC 
+Value   : 19298 
+
+2020-07-25 17:00:34: 30086 (for 2020-07-25 16:00:00, direct (2020-07-25 16:00:00)) Submitted 
+Received: 25-Jul-2020 17:00:32 UTC 
+For     : 26-Jul-2020 10:00:00 UTC 
+Value   : 30086 
+
+2020-07-25 17:09:29: 30086 (for 2020-07-25 16:00:00, direct (2020-07-25 16:00:00)) Submitted 
+Received: 25-Jul-2020 17:09:27 UTC 
+For     : 26-Jul-2020 10:00:00 UTC 
+Value   : 30086 
+
+2020-07-25 17:50:25: 19756 (for 2020-07-25 17:00:00, iterative (2020-07-25 16:00:00)) Submitted 
+Received: 25-Jul-2020 17:50:23 UTC 
+For     : 26-Jul-2020 11:00:00 UTC 
+Value   : 19756 
+
+2020-07-25 18:00:37: 33369 (for 2020-07-25 17:00:00, direct (2020-07-25 17:00:00)) Submitted 
+Received: 25-Jul-2020 18:00:36 UTC 
+For     : 26-Jul-2020 11:00:00 UTC 
+Value   : 33369 
+
+2020-07-25 18:09:21: 33369 (for 2020-07-25 17:00:00, direct (2020-07-25 17:00:00)) Submitted 
+Received: 25-Jul-2020 18:09:20 UTC 
+For     : 26-Jul-2020 11:00:00 UTC 
+Value   : 33369 
+
+2020-07-25 18:50:41: 10788 (for 2020-07-25 18:00:00, iterative (2020-07-25 17:00:00)) Submitted 
+Received: 25-Jul-2020 18:50:41 UTC 
+For     : 26-Jul-2020 12:00:00 UTC 
+Value   : 10788 
+
+2020-07-25 19:00:42: 25728 (for 2020-07-25 18:00:00, direct (2020-07-25 18:00:00)) Submitted 
+Received: 25-Jul-2020 19:00:40 UTC 
+For     : 26-Jul-2020 12:00:00 UTC 
+Value   : 25728 
+
+2020-07-25 19:09:36: 22620 (for 2020-07-25 18:00:00, direct (2020-07-25 18:00:00)) Submitted 
+Received: 25-Jul-2020 19:09:36 UTC 
+For     : 26-Jul-2020 12:00:00 UTC 
+Value   : 22620 
+
+2020-07-25 19:50:13: 9675 (for 2020-07-25 19:00:00, iterative (2020-07-25 18:00:00)) Submitted 
+Received: 25-Jul-2020 19:50:13 UTC 
+For     : 26-Jul-2020 13:00:00 UTC 
+Value   : 9675 
+
+2020-07-25 20:00:16: 23609 (for 2020-07-25 19:00:00, direct (2020-07-25 19:00:00)) Submitted 
+Received: 25-Jul-2020 20:00:15 UTC 
+For     : 26-Jul-2020 13:00:00 UTC 
+Value   : 23609 
+
+2020-07-25 20:09:12: 23609 (for 2020-07-25 19:00:00, direct (2020-07-25 19:00:00)) Submitted 
+Received: 25-Jul-2020 20:09:12 UTC 
+For     : 26-Jul-2020 13:00:00 UTC 
+Value   : 23609 
+
+2020-07-25 20:50:15: 11697 (for 2020-07-25 20:00:00, iterative (2020-07-25 19:00:00)) Submitted 
+Received: 25-Jul-2020 20:50:13 UTC 
+For     : 26-Jul-2020 14:00:00 UTC 
+Value   : 11697 
+
+2020-07-25 21:00:15: 21514 (for 2020-07-25 20:00:00, direct (2020-07-25 20:00:00)) Submitted 
+Received: 25-Jul-2020 21:00:14 UTC 
+For     : 26-Jul-2020 14:00:00 UTC 
+Value   : 21514 
+
+2020-07-25 21:09:13: 21514 (for 2020-07-25 20:00:00, direct (2020-07-25 20:00:00)) Submitted 
+Received: 25-Jul-2020 21:09:12 UTC 
+For     : 26-Jul-2020 14:00:00 UTC 
+Value   : 21514 
+
+2020-07-25 21:50:12: 11989 (for 2020-07-25 21:00:00, iterative (2020-07-25 20:00:00)) Submitted 
+Received: 25-Jul-2020 21:50:12 UTC 
+For     : 26-Jul-2020 15:00:00 UTC 
+Value   : 11989 
+
+2020-07-25 22:00:14: 23152 (for 2020-07-25 21:00:00, direct (2020-07-25 21:00:00)) Submitted 
+Received: 25-Jul-2020 22:00:14 UTC 
+For     : 26-Jul-2020 15:00:00 UTC 
+Value   : 23152 
+
+2020-07-25 22:00:27: 23152 (for 2020-07-25 21:00:00, direct (2020-07-25 21:00:00)) Submitted 
+Received: 25-Jul-2020 22:00:26 UTC 
+For     : 26-Jul-2020 15:00:00 UTC 
+Value   : 23152 
+
+2020-07-25 22:09:14: 23152 (for 2020-07-25 21:00:00, direct (2020-07-25 21:00:00)) Submitted 
+Received: 25-Jul-2020 22:09:12 UTC 
+For     : 26-Jul-2020 15:00:00 UTC 
+Value   : 23152 
+
+2020-07-25 22:50:28: 7529 (for 2020-07-25 22:00:00, iterative (2020-07-25 21:00:00)) Submitted 
+Received: 25-Jul-2020 22:50:27 UTC 
+For     : 26-Jul-2020 16:00:00 UTC 
+Value   : 7529 
+
+2020-07-25 23:00:24: 22037 (for 2020-07-25 22:00:00, direct (2020-07-25 22:00:00)) Submitted 
+Received: 25-Jul-2020 23:00:24 UTC 
+For     : 26-Jul-2020 16:00:00 UTC 
+Value   : 22037 
+
+2020-07-25 23:09:24: 22037 (for 2020-07-25 22:00:00, direct (2020-07-25 22:00:00)) Submitted 
+Received: 25-Jul-2020 23:09:23 UTC 
+For     : 26-Jul-2020 16:00:00 UTC 
+Value   : 22037 
+
+2020-07-25 23:50:46: 4707 (for 2020-07-25 23:00:00, iterative (2020-07-25 22:00:00)) Submitted 
+Received: 25-Jul-2020 23:50:45 UTC 
+For     : 26-Jul-2020 17:00:00 UTC 
+Value   : 4707 
+
+2020-07-26 00:00:27: 20789 (for 2020-07-25 23:00:00, direct (2020-07-25 23:00:00)) Submitted 
+Received: 26-Jul-2020 00:00:27 UTC 
+For     : 26-Jul-2020 17:00:00 UTC 
+Value   : 20789 
+
+2020-07-26 00:09:21: 20789 (for 2020-07-25 23:00:00, direct (2020-07-25 23:00:00)) Submitted 
+Received: 26-Jul-2020 00:09:19 UTC 
+For     : 26-Jul-2020 17:00:00 UTC 
+Value   : 20789 
+
+2020-07-26 00:50:44: 4077 (for 2020-07-26 00:00:00, iterative (2020-07-25 23:00:00)) Submitted 
+Received: 26-Jul-2020 00:50:44 UTC 
+For     : 26-Jul-2020 18:00:00 UTC 
+Value   : 4077 
+
+2020-07-26 01:00:52: 17223 (for 2020-07-26 00:00:00, direct (2020-07-26 00:00:00)) Submitted 
+Received: 26-Jul-2020 01:00:51 UTC 
+For     : 26-Jul-2020 18:00:00 UTC 
+Value   : 17223 
+
+2020-07-26 01:09:45: 17223 (for 2020-07-26 00:00:00, direct (2020-07-26 00:00:00)) Submitted 
+Received: 26-Jul-2020 01:09:45 UTC 
+For     : 26-Jul-2020 18:00:00 UTC 
+Value   : 17223 
+
+2020-07-26 01:50:14: 4352 (for 2020-07-26 01:00:00, iterative (2020-07-26 00:00:00)) Submitted 
+Received: 26-Jul-2020 01:50:14 UTC 
+For     : 26-Jul-2020 19:00:00 UTC 
+Value   : 4352 
+
+2020-07-26 02:00:17: 15520 (for 2020-07-26 01:00:00, direct (2020-07-26 01:00:00)) Submitted 
+Received: 26-Jul-2020 02:00:16 UTC 
+For     : 26-Jul-2020 19:00:00 UTC 
+Value   : 15520 
+
+2020-07-26 02:09:14: 15520 (for 2020-07-26 01:00:00, direct (2020-07-26 01:00:00)) Submitted 
+Received: 26-Jul-2020 02:09:12 UTC 
+For     : 26-Jul-2020 19:00:00 UTC 
+Value   : 15520 
+
+2020-07-26 02:50:17: 2374 (for 2020-07-26 02:00:00, iterative (2020-07-26 01:00:00)) Submitted 
+Received: 26-Jul-2020 02:50:15 UTC 
+For     : 26-Jul-2020 20:00:00 UTC 
+Value   : 2374 
+
+2020-07-26 03:00:16: 11352 (for 2020-07-26 02:00:00, direct (2020-07-26 02:00:00)) Submitted 
+Received: 26-Jul-2020 03:00:14 UTC 
+For     : 26-Jul-2020 20:00:00 UTC 
+Value   : 11352 
+
+2020-07-26 03:09:14: 11352 (for 2020-07-26 02:00:00, direct (2020-07-26 02:00:00)) Submitted 
+Received: 26-Jul-2020 03:09:12 UTC 
+For     : 26-Jul-2020 20:00:00 UTC 
+Value   : 11352 
+
+2020-07-26 03:50:14: 2078 (for 2020-07-26 03:00:00, iterative (2020-07-26 02:00:00)) Submitted 
+Received: 26-Jul-2020 03:50:13 UTC 
+For     : 26-Jul-2020 21:00:00 UTC 
+Value   : 2078 
+
+2020-07-26 04:00:15: 12575 (for 2020-07-26 03:00:00, direct (2020-07-26 03:00:00)) Submitted 
+Received: 26-Jul-2020 04:00:14 UTC 
+For     : 26-Jul-2020 21:00:00 UTC 
+Value   : 12575 
+
+2020-07-26 04:09:13: 12575 (for 2020-07-26 03:00:00, direct (2020-07-26 03:00:00)) Submitted 
+Received: 26-Jul-2020 04:09:12 UTC 
+For     : 26-Jul-2020 21:00:00 UTC 
+Value   : 12575 
+
+2020-07-26 04:50:23: 1413 (for 2020-07-26 04:00:00, iterative (2020-07-26 03:00:00)) Submitted 
+Received: 26-Jul-2020 04:50:23 UTC 
+For     : 26-Jul-2020 22:00:00 UTC 
+Value   : 1413 
+
+2020-07-26 05:00:28: 11222 (for 2020-07-26 04:00:00, direct (2020-07-26 04:00:00)) Submitted 
+Received: 26-Jul-2020 05:00:28 UTC 
+For     : 26-Jul-2020 22:00:00 UTC 
+Value   : 11222 
+
+2020-07-26 05:09:30: 11222 (for 2020-07-26 04:00:00, direct (2020-07-26 04:00:00)) Submitted 
+Received: 26-Jul-2020 05:09:29 UTC 
+For     : 26-Jul-2020 22:00:00 UTC 
+Value   : 11222 
+
+2020-07-26 05:50:23: 827 (for 2020-07-26 05:00:00, iterative (2020-07-26 04:00:00)) Submitted 
+Received: 26-Jul-2020 05:50:22 UTC 
+For     : 26-Jul-2020 23:00:00 UTC 
+Value   : 827 
+
+2020-07-26 06:00:28: 7689 (for 2020-07-26 05:00:00, direct (2020-07-26 05:00:00)) Submitted 
+Received: 26-Jul-2020 06:00:28 UTC 
+For     : 26-Jul-2020 23:00:00 UTC 
+Value   : 7689 
+
+2020-07-26 06:09:24: 7689 (for 2020-07-26 05:00:00, direct (2020-07-26 05:00:00)) Submitted 
+Received: 26-Jul-2020 06:09:23 UTC 
+For     : 26-Jul-2020 23:00:00 UTC 
+Value   : 7689 
+
+2020-07-26 06:50:14: 126 (for 2020-07-26 06:00:00, iterative (2020-07-26 05:00:00)) Submitted 
+Received: 26-Jul-2020 06:50:14 UTC 
+For     : 27-Jul-2020 00:00:00 UTC 
+Value   : 126 
+
+2020-07-26 07:00:16: 6683 (for 2020-07-26 06:00:00, direct (2020-07-26 06:00:00)) Submitted 
+Received: 26-Jul-2020 07:00:15 UTC 
+For     : 27-Jul-2020 00:00:00 UTC 
+Value   : 6683 
+
+2020-07-26 07:09:14: 6683 (for 2020-07-26 06:00:00, direct (2020-07-26 06:00:00)) Submitted 
+Received: 26-Jul-2020 07:09:12 UTC 
+For     : 27-Jul-2020 00:00:00 UTC 
+Value   : 6683 
+
+2020-07-26 07:50:47: 1549 (for 2020-07-26 07:00:00, iterative (2020-07-26 06:00:00)) Submitted 
+Received: 26-Jul-2020 07:50:46 UTC 
+For     : 27-Jul-2020 01:00:00 UTC 
+Value   : 1549 
+
+2020-07-26 08:00:35: 7899 (for 2020-07-26 07:00:00, direct (2020-07-26 07:00:00)) Submitted 
+Received: 26-Jul-2020 08:00:35 UTC 
+For     : 27-Jul-2020 01:00:00 UTC 
+Value   : 7899 
+
+2020-07-26 08:09:34: 7899 (for 2020-07-26 07:00:00, direct (2020-07-26 07:00:00)) Submitted 
+Received: 26-Jul-2020 08:09:33 UTC 
+For     : 27-Jul-2020 01:00:00 UTC 
+Value   : 7899 
+
+2020-07-26 08:50:13: 2774 (for 2020-07-26 08:00:00, iterative (2020-07-26 07:00:00)) Submitted 
+Received: 26-Jul-2020 08:50:13 UTC 
+For     : 27-Jul-2020 02:00:00 UTC 
+Value   : 2774 
+
+2020-07-26 09:00:16: 9727 (for 2020-07-26 08:00:00, direct (2020-07-26 08:00:00)) Submitted 
+Received: 26-Jul-2020 09:00:15 UTC 
+For     : 27-Jul-2020 02:00:00 UTC 
+Value   : 9727 
+
+2020-07-26 09:09:13: 9727 (for 2020-07-26 08:00:00, direct (2020-07-26 08:00:00)) Submitted 
+Received: 26-Jul-2020 09:09:12 UTC 
+For     : 27-Jul-2020 02:00:00 UTC 
+Value   : 9727 
+
+2020-07-26 09:50:13: 1077 (for 2020-07-26 09:00:00, iterative (2020-07-26 08:00:00)) Submitted 
+Received: 26-Jul-2020 09:50:13 UTC 
+For     : 27-Jul-2020 03:00:00 UTC 
+Value   : 1077 
+
+2020-07-26 10:00:17: 9148 (for 2020-07-26 09:00:00, direct (2020-07-26 09:00:00)) Submitted 
+Received: 26-Jul-2020 10:00:15 UTC 
+For     : 27-Jul-2020 03:00:00 UTC 
+Value   : 9148 
+
+2020-07-26 10:09:13: 9148 (for 2020-07-26 09:00:00, direct (2020-07-26 09:00:00)) Submitted 
+Received: 26-Jul-2020 10:09:12 UTC 
+For     : 27-Jul-2020 03:00:00 UTC 
+Value   : 9148 
+
+2020-07-26 10:50:28: 1552 (for 2020-07-26 10:00:00, iterative (2020-07-26 09:00:00)) Submitted 
+Received: 26-Jul-2020 10:50:27 UTC 
+For     : 27-Jul-2020 04:00:00 UTC 
+Value   : 1552 
+
+2020-07-26 11:00:34: 8549 (for 2020-07-26 10:00:00, direct (2020-07-26 10:00:00)) Submitted 
+Received: 26-Jul-2020 11:00:33 UTC 
+For     : 27-Jul-2020 04:00:00 UTC 
+Value   : 8549 
+
+2020-07-26 11:09:25: 8549 (for 2020-07-26 10:00:00, direct (2020-07-26 10:00:00)) Submitted 
+Received: 26-Jul-2020 11:09:25 UTC 
+For     : 27-Jul-2020 04:00:00 UTC 
+Value   : 8549 
+
+2020-07-26 11:50:28: 1984 (for 2020-07-26 11:00:00, iterative (2020-07-26 10:00:00)) Submitted 
+Received: 26-Jul-2020 11:50:27 UTC 
+For     : 27-Jul-2020 05:00:00 UTC 
+Value   : 1984 
+
+2020-07-26 12:00:25: 10061 (for 2020-07-26 11:00:00, direct (2020-07-26 11:00:00)) Submitted 
+Received: 26-Jul-2020 12:00:24 UTC 
+For     : 27-Jul-2020 05:00:00 UTC 
+Value   : 10061 
+
+2020-07-26 12:09:22: 10061 (for 2020-07-26 11:00:00, direct (2020-07-26 11:00:00)) Submitted 
+Received: 26-Jul-2020 12:09:21 UTC 
+For     : 27-Jul-2020 05:00:00 UTC 
+Value   : 10061 
+
+2020-07-26 12:50:35: 2681 (for 2020-07-26 12:00:00, iterative (2020-07-26 11:00:00)) Submitted 
+Received: 26-Jul-2020 12:50:35 UTC 
+For     : 27-Jul-2020 06:00:00 UTC 
+Value   : 2681 
+
+2020-07-26 13:00:47: 8209 (for 2020-07-26 12:00:00, direct (2020-07-26 12:00:00)) Submitted 
+Received: 26-Jul-2020 13:00:46 UTC 
+For     : 27-Jul-2020 06:00:00 UTC 
+Value   : 8209 
+
+2020-07-26 13:09:40: 8209 (for 2020-07-26 12:00:00, direct (2020-07-26 12:00:00)) Submitted 
+Received: 26-Jul-2020 13:09:38 UTC 
+For     : 27-Jul-2020 06:00:00 UTC 
+Value   : 8209 
+
+2020-07-26 13:50:17: 6016 (for 2020-07-26 13:00:00, iterative (2020-07-26 12:00:00)) Submitted 
+Received: 26-Jul-2020 13:50:16 UTC 
+For     : 27-Jul-2020 07:00:00 UTC 
+Value   : 6016 
+
+2020-07-26 14:00:17: 9741 (for 2020-07-26 13:00:00, direct (2020-07-26 13:00:00)) Submitted 
+Received: 26-Jul-2020 14:00:16 UTC 
+For     : 27-Jul-2020 07:00:00 UTC 
+Value   : 9741 
+
+2020-07-26 14:09:13: 9741 (for 2020-07-26 13:00:00, direct (2020-07-26 13:00:00)) Submitted 
+Received: 26-Jul-2020 14:09:13 UTC 
+For     : 27-Jul-2020 07:00:00 UTC 
+Value   : 9741 
+
+2020-07-26 14:50:15: 10192 (for 2020-07-26 14:00:00, iterative (2020-07-26 13:00:00)) Submitted 
+Received: 26-Jul-2020 14:50:14 UTC 
+For     : 27-Jul-2020 08:00:00 UTC 
+Value   : 10192 
+
+2020-07-26 15:00:15: 14877 (for 2020-07-26 14:00:00, direct (2020-07-26 14:00:00)) Submitted 
+Received: 26-Jul-2020 15:00:15 UTC 
+For     : 27-Jul-2020 08:00:00 UTC 
+Value   : 14877 
+
+2020-07-26 15:09:14: 14877 (for 2020-07-26 14:00:00, direct (2020-07-26 14:00:00)) Submitted 
+Received: 26-Jul-2020 15:09:12 UTC 
+For     : 27-Jul-2020 08:00:00 UTC 
+Value   : 14877 
+
+2020-07-26 15:50:14: 14743 (for 2020-07-26 15:00:00, iterative (2020-07-26 14:00:00)) Submitted 
+Received: 26-Jul-2020 15:50:13 UTC 
+For     : 27-Jul-2020 09:00:00 UTC 
+Value   : 14743 
+
+2020-07-26 16:00:17: 21050 (for 2020-07-26 15:00:00, direct (2020-07-26 15:00:00)) Submitted 
+Received: 26-Jul-2020 16:00:16 UTC 
+For     : 27-Jul-2020 09:00:00 UTC 
+Value   : 21050 
+
+2020-07-26 16:09:13: 13806 (for 2020-07-26 15:00:00, direct (2020-07-26 15:00:00)) Submitted 
+Received: 26-Jul-2020 16:09:12 UTC 
+For     : 27-Jul-2020 09:00:00 UTC 
+Value   : 13806 
+
+2020-07-26 16:50:28: 9539 (for 2020-07-26 16:00:00, iterative (2020-07-26 15:00:00)) Submitted 
+Received: 26-Jul-2020 16:50:27 UTC 
+For     : 27-Jul-2020 10:00:00 UTC 
+Value   : 9539 
+
+2020-07-26 17:00:28: 20970 (for 2020-07-26 16:00:00, direct (2020-07-26 16:00:00)) Submitted 
+Received: 26-Jul-2020 17:00:28 UTC 
+For     : 27-Jul-2020 10:00:00 UTC 
+Value   : 20970 
+
+2020-07-26 17:09:25: 20970 (for 2020-07-26 16:00:00, direct (2020-07-26 16:00:00)) Submitted 
+Received: 26-Jul-2020 17:09:24 UTC 
+For     : 27-Jul-2020 10:00:00 UTC 
+Value   : 20970 
+
+2020-07-26 17:50:22: 16267 (for 2020-07-26 17:00:00, iterative (2020-07-26 16:00:00)) Submitted 
+Received: 26-Jul-2020 17:50:21 UTC 
+For     : 27-Jul-2020 11:00:00 UTC 
+Value   : 16267 
+
+2020-07-26 18:00:27: 23251 (for 2020-07-26 17:00:00, direct (2020-07-26 17:00:00)) Submitted 
+Received: 26-Jul-2020 18:00:25 UTC 
+For     : 27-Jul-2020 11:00:00 UTC 
+Value   : 23251 
+
+2020-07-26 18:09:26: 23251 (for 2020-07-26 17:00:00, direct (2020-07-26 17:00:00)) Submitted 
+Received: 26-Jul-2020 18:09:24 UTC 
+For     : 27-Jul-2020 11:00:00 UTC 
+Value   : 23251 
+
+2020-07-26 18:50:40: 23258 (for 2020-07-26 18:00:00, iterative (2020-07-26 17:00:00)) Submitted 
+Received: 26-Jul-2020 18:50:39 UTC 
+For     : 27-Jul-2020 12:00:00 UTC 
+Value   : 23258 
+
+2020-07-26 19:00:46: 26265 (for 2020-07-26 18:00:00, direct (2020-07-26 18:00:00)) Submitted 
+Received: 26-Jul-2020 19:00:46 UTC 
+For     : 27-Jul-2020 12:00:00 UTC 
+Value   : 26265 
+
+2020-07-26 19:09:31: 26265 (for 2020-07-26 18:00:00, direct (2020-07-26 18:00:00)) Submitted 
+Received: 26-Jul-2020 19:09:30 UTC 
+For     : 27-Jul-2020 12:00:00 UTC 
+Value   : 26265 
+
+2020-07-26 19:50:14: 34462 (for 2020-07-26 19:00:00, iterative (2020-07-26 18:00:00)) Submitted 
+Received: 26-Jul-2020 19:50:13 UTC 
+For     : 27-Jul-2020 13:00:00 UTC 
+Value   : 34462 
+
+2020-07-26 20:00:17: 34305 (for 2020-07-26 19:00:00, direct (2020-07-26 19:00:00)) Submitted 
+Received: 26-Jul-2020 20:00:15 UTC 
+For     : 27-Jul-2020 13:00:00 UTC 
+Value   : 34305 
+
+2020-07-26 20:09:13: 34305 (for 2020-07-26 19:00:00, direct (2020-07-26 19:00:00)) Submitted 
+Received: 26-Jul-2020 20:09:13 UTC 
+For     : 27-Jul-2020 13:00:00 UTC 
+Value   : 34305 
+
+2020-07-26 20:50:15: 54988 (for 2020-07-26 20:00:00, iterative (2020-07-26 19:00:00)) Submitted 
+Received: 26-Jul-2020 20:50:14 UTC 
+For     : 27-Jul-2020 14:00:00 UTC 
+Value   : 54988 
+
+2020-07-26 21:00:15: 54327 (for 2020-07-26 20:00:00, direct (2020-07-26 20:00:00)) Submitted 
+Received: 26-Jul-2020 21:00:13 UTC 
+For     : 27-Jul-2020 14:00:00 UTC 
+Value   : 54327 
+
+2020-07-26 21:09:13: 54327 (for 2020-07-26 20:00:00, direct (2020-07-26 20:00:00)) Submitted 
+Received: 26-Jul-2020 21:09:12 UTC 
+For     : 27-Jul-2020 14:00:00 UTC 
+Value   : 54327 
+
+2020-07-26 21:09:26: 54327 (for 2020-07-26 20:00:00, direct (2020-07-26 20:00:00)) Submitted 
+Received: 26-Jul-2020 21:09:25 UTC 
+For     : 27-Jul-2020 14:00:00 UTC 
+Value   : 54327 
+
+2020-07-26 21:09:38: 54327 (for 2020-07-26 20:00:00, direct (2020-07-26 20:00:00)) Submitted 
+Received: 26-Jul-2020 21:09:38 UTC 
+For     : 27-Jul-2020 14:00:00 UTC 
+Value   : 54327 
+
+2020-07-26 21:50:13: 57619 (for 2020-07-26 21:00:00, iterative (2020-07-26 20:00:00)) Submitted 
+Received: 26-Jul-2020 21:50:13 UTC 
+For     : 27-Jul-2020 15:00:00 UTC 
+Value   : 57619 
+
+2020-07-26 22:00:15: 57482 (for 2020-07-26 21:00:00, direct (2020-07-26 21:00:00)) Submitted 
+Received: 26-Jul-2020 22:00:15 UTC 
+For     : 27-Jul-2020 15:00:00 UTC 
+Value   : 57482 
+
+2020-07-26 22:09:13: 57482 (for 2020-07-26 21:00:00, direct (2020-07-26 21:00:00)) Submitted 
+Received: 26-Jul-2020 22:09:12 UTC 
+For     : 27-Jul-2020 15:00:00 UTC 
+Value   : 57482 
+
+2020-07-26 22:09:27: 57482 (for 2020-07-26 21:00:00, direct (2020-07-26 21:00:00)) Submitted 
+Received: 26-Jul-2020 22:09:25 UTC 
+For     : 27-Jul-2020 15:00:00 UTC 
+Value   : 57482 
+
+2020-07-26 22:09:40: 57482 (for 2020-07-26 21:00:00, direct (2020-07-26 21:00:00)) Submitted 
+Received: 26-Jul-2020 22:09:38 UTC 
+For     : 27-Jul-2020 15:00:00 UTC 
+Value   : 57482 
+
+2020-07-26 22:50:26: 55532 (for 2020-07-26 22:00:00, iterative (2020-07-26 21:00:00)) Submitted 
+Received: 26-Jul-2020 22:50:24 UTC 
+For     : 27-Jul-2020 16:00:00 UTC 
+Value   : 55532 
+
+2020-07-26 23:00:32: 55092 (for 2020-07-26 22:00:00, direct (2020-07-26 22:00:00)) Submitted 
+Received: 26-Jul-2020 23:00:32 UTC 
+For     : 27-Jul-2020 16:00:00 UTC 
+Value   : 55092 
+
+2020-07-26 23:09:27: 55092 (for 2020-07-26 22:00:00, direct (2020-07-26 22:00:00)) Submitted 
+Received: 26-Jul-2020 23:09:25 UTC 
+For     : 27-Jul-2020 16:00:00 UTC 
+Value   : 55092 
+
+2020-07-26 23:09:54: 55092 (for 2020-07-26 22:00:00, direct (2020-07-26 22:00:00)) Submitted 
+Received: 26-Jul-2020 23:09:53 UTC 
+For     : 27-Jul-2020 16:00:00 UTC 
+Value   : 55092 
+
+2020-07-26 23:50:20: 59018 (for 2020-07-26 23:00:00, iterative (2020-07-26 22:00:00)) Submitted 
+Received: 26-Jul-2020 23:50:20 UTC 
+For     : 27-Jul-2020 17:00:00 UTC 
+Value   : 59018 
+
+2020-07-27 00:00:36: 56185 (for 2020-07-26 23:00:00, direct (2020-07-26 23:00:00)) Submitted 
+Received: 27-Jul-2020 00:00:36 UTC 
+For     : 27-Jul-2020 17:00:00 UTC 
+Value   : 56185 
+
+2020-07-27 00:09:22: 56185 (for 2020-07-26 23:00:00, direct (2020-07-26 23:00:00)) Submitted 
+Received: 27-Jul-2020 00:09:21 UTC 
+For     : 27-Jul-2020 17:00:00 UTC 
+Value   : 56185 
+
+2020-07-27 00:09:44: 56185 (for 2020-07-26 23:00:00, direct (2020-07-26 23:00:00)) Submitted 
+Received: 27-Jul-2020 00:09:43 UTC 
+For     : 27-Jul-2020 17:00:00 UTC 
+Value   : 56185 
+
+2020-07-27 00:50:36: 57934 (for 2020-07-27 00:00:00, iterative (2020-07-26 23:00:00)) Submitted 
+Received: 27-Jul-2020 00:50:36 UTC 
+For     : 27-Jul-2020 18:00:00 UTC 
+Value   : 57934 
+
+2020-07-27 01:00:45: 52804 (for 2020-07-27 00:00:00, direct (2020-07-27 00:00:00)) Submitted 
+Received: 27-Jul-2020 01:00:45 UTC 
+For     : 27-Jul-2020 18:00:00 UTC 
+Value   : 52804 
+
+2020-07-27 01:09:37: 52804 (for 2020-07-27 00:00:00, direct (2020-07-27 00:00:00)) Submitted 
+Received: 27-Jul-2020 01:09:37 UTC 
+For     : 27-Jul-2020 18:00:00 UTC 
+Value   : 52804 
+
+2020-07-27 01:50:15: 57483 (for 2020-07-27 01:00:00, iterative (2020-07-27 00:00:00)) Submitted 
+Received: 27-Jul-2020 01:50:15 UTC 
+For     : 27-Jul-2020 19:00:00 UTC 
+Value   : 57483 
+
+2020-07-27 02:00:15: 51296 (for 2020-07-27 01:00:00, direct (2020-07-27 01:00:00)) Submitted 
+Received: 27-Jul-2020 02:00:14 UTC 
+For     : 27-Jul-2020 19:00:00 UTC 
+Value   : 51296 
+
+2020-07-27 02:09:11: 51296 (for 2020-07-27 01:00:00, direct (2020-07-27 01:00:00)) Submitted 
+Received: 27-Jul-2020 02:09:11 UTC 
+For     : 27-Jul-2020 19:00:00 UTC 
+Value   : 51296 
+
+2020-07-27 02:09:23: 51296 (for 2020-07-27 01:00:00, direct (2020-07-27 01:00:00)) Submitted 
+Received: 27-Jul-2020 02:09:23 UTC 
+For     : 27-Jul-2020 19:00:00 UTC 
+Value   : 51296 
+
+2020-07-27 02:09:35: 51296 (for 2020-07-27 01:00:00, direct (2020-07-27 01:00:00)) Submitted 
+Received: 27-Jul-2020 02:09:35 UTC 
+For     : 27-Jul-2020 19:00:00 UTC 
+Value   : 51296 
+
+2020-07-27 02:50:15: 47159 (for 2020-07-27 02:00:00, iterative (2020-07-27 01:00:00)) Submitted 
+Received: 27-Jul-2020 02:50:14 UTC 
+For     : 27-Jul-2020 20:00:00 UTC 
+Value   : 47159 
+
+2020-07-27 03:00:17: 37877 (for 2020-07-27 02:00:00, direct (2020-07-27 02:00:00)) Submitted 
+Received: 27-Jul-2020 03:00:15 UTC 
+For     : 27-Jul-2020 20:00:00 UTC 
+Value   : 37877 
+

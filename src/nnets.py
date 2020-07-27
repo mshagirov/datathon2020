@@ -3,6 +3,81 @@ from torch import nn
 from torch import optim
 
 
+class dense(nn.Module):
+    '''Dense or fully-connected layer, linear->activation(->optional dropout)'''
+    def __init__(self,in_dim,out_dim, p=0, Fn=nn.ReLU, Fn_kwargs={}):
+        '''
+        - input_dim: input dim-s,
+        - output_dim: output dim-s
+        - p: dropout prob-y {default: 0},
+        - Fn: activation function {default: nn.ReLU}
+        - Fn_kwargs: keyword arg-s for activation function ,
+        default is empty dict. {}, i.e. nothing is passed to `Fn`.
+        '''
+        super(dense,self).__init__()
+        self.linear = nn.Linear(in_dim, out_dim)
+        self.activation = Fn(**Fn_kwargs)
+        if p:
+            self.dropout=nn.Dropout(p= p)
+        self.p = p
+    def forward(self, x):
+        '''x: input vector'''
+        x=self.linear(x)
+        x= self.activation(x)
+        if self.p:
+            x=self.dropout(x)
+        return x
+
+class diffmlp(nn.Module):
+    def __init__(self,in_dim,out_dim=1,layer_dims=[], dropout_p=[], Fn=nn.ReLU, Fn_kwargs={}):
+        super(diffmlp,self).__init__()
+        assert len(layer_dims)>0
+        assert len(dropout_p)==0 or len(dropout_p)==1 or len(dropout_p)==len(layer_dims)
+        if len(dropout_p)==1:
+            dropout_p = [dropout_p[0] for k in range(len(layer_dims)) ]
+        
+        layers = [('dense1',dense(in_dim, layer_dims[0],p=0 if len(dropout_p)==0 else dropout_p[0],
+                                         Fn=Fn, Fn_kwargs=Fn_kwargs))
+                        ]# input->layer1
+        
+        for k in range(len(layer_dims)-1):
+            layers.append(('dense'+str(k+2),dense(layer_dims[k],layer_dims[k+1],
+                                                  p=0 if len(dropout_p)==0 else dropout_p[k+1],
+                                                  Fn=Fn, Fn_kwargs=Fn_kwargs) ) )
+        self.layers = nn.ModuleDict(layers)
+        self.output_layer  = nn.Linear(layer_dims[-1], out_dim)
+    def forward(self, x, y0):
+        '''x: input vector'''
+        for l in self.layers:
+            x = self.layers[l](x)
+        x_out = self.output_layer(x)+y0
+        return x_out
+
+class mlp(nn.Module):
+    def __init__(self,in_dim,out_dim=1,layer_dims=[], dropout_p=[], Fn=nn.ReLU, Fn_kwargs={}):
+        super(mlp,self).__init__()
+        assert len(layer_dims)>0
+        assert len(dropout_p)==0 or len(dropout_p)==1 or len(dropout_p)==len(layer_dims)
+        if len(dropout_p)==1:
+            dropout_p = [dropout_p[0] for k in range(len(layer_dims)) ]
+        
+        layers = [('dense1',dense(in_dim, layer_dims[0],p=0 if len(dropout_p)==0 else dropout_p[0],
+                                         Fn=Fn, Fn_kwargs=Fn_kwargs))
+                        ]# input->layer1
+        
+        for k in range(len(layer_dims)-1):
+            layers.append(('dense'+str(k+2),dense(layer_dims[k],layer_dims[k+1],
+                                                  p=0 if len(dropout_p)==0 else dropout_p[k+1],
+                                                  Fn=Fn, Fn_kwargs=Fn_kwargs) ) )
+        self.layers = nn.ModuleDict(layers)
+        self.output_layer  = nn.Linear(layer_dims[-1], out_dim)
+    def forward(self, x, y0):
+        '''x: input vector'''
+        for l in self.layers:
+            x = self.layers[l](x)
+        return self.output_layer(x)
+
+    
 class fcNet(nn.Module):
     '''Fully-connected (FC) network model.
     Output layer has no activation, i.e. it's a plain linear layer.
@@ -97,7 +172,7 @@ class diffNet_scaler(nn.Module):
         self.input_dim = kwargs['input_dim']
         
         #         self.weights = nn.Parameter(torch.ones(1, self.input_dim)/np.sqrt(self.input_dim))
-        self.weights = nn.Parameter(torch.ones(1, self.input_dim))
+        self.weights = nn.Parameter(0.1*torch.ones(1, self.input_dim))
         self.net = fcNet(**kwargs)
         
     def forward(self, x, Y0):
