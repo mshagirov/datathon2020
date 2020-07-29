@@ -28,6 +28,34 @@ class dense(nn.Module):
             x=self.dropout(x)
         return x
 
+class diffmlp_sq(nn.Module):
+    def __init__(self,in_dim,out_dim=1,layer_dims=[], dropout_p=[], Fn=nn.ReLU, Fn_kwargs={}):
+        super(diffmlp_sq,self).__init__()
+        assert len(layer_dims)>0
+        assert len(dropout_p)==0 or len(dropout_p)==1 or len(dropout_p)==len(layer_dims)
+        if len(dropout_p)==1:
+            dropout_p = [dropout_p[0] for k in range(len(layer_dims)) ]
+        in_dim = in_dim*2
+        
+        layers = [('dense1',dense(in_dim, layer_dims[0],p=0 if len(dropout_p)==0 else dropout_p[0],
+                                         Fn=Fn, Fn_kwargs=Fn_kwargs))
+                        ]# input->layer1
+        
+        for k in range(len(layer_dims)-1):
+            layers.append(('dense'+str(k+2),dense(layer_dims[k],layer_dims[k+1],
+                                                  p=0 if len(dropout_p)==0 else dropout_p[k+1],
+                                                  Fn=Fn, Fn_kwargs=Fn_kwargs) ) )
+        self.layers = nn.ModuleDict(layers)
+        self.output_layer  = nn.Linear(layer_dims[-1], out_dim)
+        
+    def forward(self, x, y0):
+        '''x: input vector'''
+        x = torch.cat((x,x**2), 1)
+        for l in self.layers:
+            x = self.layers[l](x)
+        x_out = self.output_layer(x)+y0
+        return x_out
+    
 class diffmlp(nn.Module):
     def __init__(self,in_dim,out_dim=1,layer_dims=[], dropout_p=[], Fn=nn.ReLU, Fn_kwargs={}):
         super(diffmlp,self).__init__()

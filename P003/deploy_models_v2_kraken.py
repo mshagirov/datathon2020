@@ -34,6 +34,9 @@ from src import datautils
 # # # # # # # # # # # # # # # # # # #
 #             CONSTANTS             #
 # # # # # # # # # # # # # # # # # # #
+
+__PASSWORD__ = None # FILL IN YOUR PASSWORD HERE
+
 window_size = 40
 lead_time = 18
 
@@ -105,7 +108,7 @@ def sleep4time(curr_utc_time):
 
 def send_value2url(val):
     html=b''
-    passwrd = '961993551'
+    passwrd = __PASSWORD__
     url_add = f'http://3.1.52.222/submit/pred?pwd={passwrd}&value={val}'
     try:
         with urllib.request.urlopen(url_add) as response:
@@ -254,6 +257,7 @@ while deployment_end_time>utc_now():
     if energy_df[energy_df.index==need_time()].values.shape[0]==0:
         print(f'\nUsing iterative method: latest {energy_date_range[-1]} (need {need_time()})\n')
         Y_pred = iter_predict18(energy_df, energy_date_range[-1])
+        Y_pred = Y_pred*0.88
         pred_method = f'iterative ({energy_date_range[-1]})'
     else:
         print(f'\nComputing T+18 forecast directly (latest {energy_date_range[-1]}, need {need_time()})\n')
@@ -287,6 +291,7 @@ while deployment_end_time>utc_now():
         # Predict using 5 best models, and de-normalise, take mean for all predictions:
         Y_pred = np.mean(np.array(predictT18(Xdeploy,Y0))*scale_ +shift_)
         # Set 0kWh as min prediction, and convert to integer
+        #Y_pred = Y_pred*.925
         Y_pred = np.maximum(0,int(Y_pred))
         pred_method = f'direct ({energy_date_range[-1]})'
         

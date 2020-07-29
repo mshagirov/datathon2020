@@ -25,11 +25,14 @@ if os.path.basename(os.getcwd())!='P003':
     os.chdir(lib_path)
     
 from src import datautils
-from src.nnets import diffmlp, dense
+from src.nnets import diffmlp, dense, diffmlp_sq
 
 # # # # # # # # # # # # # # # # # # #
 #             CONSTANTS             #
 # # # # # # # # # # # # # # # # # # #
+
+__PASSWORD__ = None # FILL IN YOUR PASSWORD HERE
+
 window_size = 40
 lead_time = 18
 
@@ -45,7 +48,7 @@ wind_scale_ = 8.0 # half of max speed (wind vector)
 # location of networks
 model_dir = os.path.relpath('./best_models')
 # get all models that match the pattern:
-model_filenames = glob.glob(os.path.join(model_dir,'27Jul2020_1023*'))
+model_filenames = glob.glob(os.path.join(model_dir,'27Jul2020_1427*'))
 
 # Just in case
 deployment_end_time  = pd.to_datetime('2020-12-29 10:00:00')
@@ -80,7 +83,7 @@ def need_time():
 
 def send_value2url(val):
     html=b''
-    passwrd = '961993551'
+    passwrd = __PASSWORD__
     url_add = f'http://3.1.52.222/submit/pred?pwd={passwrd}&value={val}'
     try:
         with urllib.request.urlopen(url_add) as response:
@@ -235,14 +238,14 @@ while deployment_end_time>utc_now():
     energy_1 = datautils.read_ai4impact_energy('datasets/energy-ile-de-france.csv')
 
     # RTE source:
-    #RTE_file_path = datautils.download_raw_from_RTE('real_time',return_filelist=True)
-    #energy_2=datautils.read_RTE_as_kwh(RTE_file_path[0],convert2UTC=True)
+    RTE_file_path = datautils.download_raw_from_RTE('real_time',return_filelist=True)
+    energy_2=datautils.read_RTE_as_kwh(RTE_file_path[0],convert2UTC=True)
 
     print(f'---\nTime elapsed: {utc_now()-t0}\n---\n')
 
     # Select latest energy source
-    #enrg_src = np.argmax([energy_1.index[-1], energy_2.index[-1]])
-    energy_df  = energy_1 # energy_1 if enrg_src==0 else energy_2
+    enrg_src = np.argmax([energy_1.index[-1], energy_2.index[-1]])
+    energy_df  = energy_1 if enrg_src==0 else energy_2
     energy_date_range = pd.date_range(energy_df.index[0],energy_df.index[-1],freq='H')
 
 

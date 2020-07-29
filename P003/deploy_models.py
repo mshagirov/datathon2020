@@ -30,6 +30,9 @@ from src import datautils
 # # # # # # # # # # # # # # # # # # #
 #             CONSTANTS             #
 # # # # # # # # # # # # # # # # # # #
+
+__PASSWORD__ = None # FILL IN YOUR PASSWORD HERE
+
 window_size = 40
 lead_time = 18
 
@@ -80,7 +83,7 @@ def need_time():
 
 def send_value2url(val):
     html=b''
-    passwrd = '961993551'
+    passwrd = __PASSWORD__
     url_add = f'http://3.1.52.222/submit/pred?pwd={passwrd}&value={val}'
     try:
         with urllib.request.urlopen(url_add) as response:
