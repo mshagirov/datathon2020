@@ -3,7 +3,7 @@
 >Our team's files for "Deep Learning Datathon 2020", organised by ai4impact.
 
 ***Team Name**: Oracle*<br>
-*repo author: Murat Shagirov*
+*repo and code by Murat Shagirov*
 
 Suggested way to use and edit `./src/*.py` files and notebook templates in `./nbs`:
 - Copy notebook templates to a new folder, then create symbolic link e.g.:
