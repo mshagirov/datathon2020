@@ -2,14 +2,14 @@
 ---
 >Our team's files for "Deep Learning Datathon 2020", organised by ai4impact.
 
-**Team Name**: Oracle
+**Team Name**: Oracle<br>
+*Codes: Murat Shagirov*
 
 Suggested way to use and edit `./src/*.py` files and notebook templates in `./nbs`:
 - Copy notebook templates to a new folder, then create symbolic link e.g.:
     - `ln -s '../datathon2020/src/' .`
 - Once you created the link, in your notebooks you can import all the modules in `./src` with `from src.[MODULE_NAME] import [SOMETHING]` e.g.:
     - `from src.datautils import windowed_data`
-- If you develop a new and useful routine (e.g. implement prediction notebook, or add model saving, early stopping) edit the template notebook in this repository. Don't forget to share with others :smile:, and tell about the new routines that you add :loudspeaker:.
 
 ---
 - `./src` python source code (2nd part of datathon).
