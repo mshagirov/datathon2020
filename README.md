@@ -1,6 +1,6 @@
-# Oracle: Datathon 2020
+# Datathon 2020
 ---
->Our team's files for "Deep Learning Datathon 2020", organised by ai4impact.
+>Our team's code and files for "Deep Learning Datathon 2020", organised by ai4impact.
 
 ***Team Name**: Oracle*<br>
 *repo and code by Murat Shagirov*
